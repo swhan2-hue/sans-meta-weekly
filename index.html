@@ -75,9 +75,9 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
 <header>
   <div>
     <h1>SANS Meta <span>W46</span></h1>
-    <nav><a href="#perf">반응 · 매출전환</a><a href="#risk">주의할 문구</a><a href="#trend">트렌드</a><a href="#next">다음 주 소재</a><a href="#todo">W47 확인할 것</a></nav>
+    <nav><a href="#perf">반응 · 매출전환</a><a href="#risk">주의할 문구</a><a href="#trend">트렌드</a><a href="#next">다음 주 소재</a><a href="#daily">매일 소재 40장</a><a href="#todo">W47 확인할 것</a></nav>
   </div>
-  <p class="sub">Meta 광고 계정 "산스"(KRW) · 최근 7일 · 2026-11-10 조회·작성. 숫자는 Meta 광고 관리자 기준이며 Amazon 실제 구매는 포함되지 않습니다.</p>
+  <p class="sub">Meta 광고 계정 "산스"(KRW) · 최근 7일 · 2026-11-10 조회·작성. 숫자는 Meta 광고 관리자 기준이며 Amazon 실제 구매(Amazon Attribution)는 아직 포함되지 않았습니다.</p>
 </header>
 
 <div class="kpis">
@@ -87,7 +87,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
   
   <div class="kpi"><span>다음 주 집행 소재</span><b>20장</b><small>확장 5테마 + 신규 5테마 × EN·ES</small></div>
 </div>
-<p class="note"><b>QAC</b>는 Amazon으로 넘어가 15초 이상 머문 클릭입니다. 클릭의 질을 보는 지표이고 구매가 아닙니다. 아래 순위는 Amazon Attribution 구매 수치를 받으면 다시 매깁니다.</p>
+<p class="note"><b>매출전환 기준이 바뀝니다.</b> 앞으로 매출전환은 <b>Amazon Attribution 구매</b>(주문 수·매출)로 판정합니다. Attribution 수치는 약 2일 늦게 들어오므로 최근 2일은 미확정으로 둡니다. <b>QAC</b>(Amazon으로 넘어가 15초 이상 머문 클릭)는 그 전에 먼저 보는 보조 지표입니다. 아래 W46 순위는 아직 QAC 기준이며, Attribution 리포트를 받으면 구매 기준으로 다시 매깁니다.</p>
 
 <section id="perf">
   <h2>이번 주 성과 ① 반응</h2>
@@ -131,6 +131,16 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
       <p style="font-size:12px;color:var(--mute);margin-top:10px">눈금 0~28,000원. 할로윈·디아 데 무에르토스 시즌 아트도 부진했습니다.</p>
     </div>
   </div>
+  <div class="box" style="margin-top:14px"><h3>매출전환 판정 기준 (Amazon Attribution, 2일 지연 반영)</h3>
+    <ul>
+      <li><b>확정 지표</b>: Amazon Attribution의 구매 수와 매출. 광고비(Meta 지출)로 나눠 <b>구매 1건당 광고비</b>와 <b>광고비 대비 매출</b>을 봅니다.</li>
+      <li><b>보조 지표</b>: QAC 1건당 비용과 체크아웃 시작 수. Attribution 수치가 들어오기 전 이틀 동안의 가늠용입니다.</li>
+      <li><b>지연 처리</b>: Attribution은 약 2일 늦습니다. 조회일 기준 최근 2일은 "미확정"으로 표시하고 순위에 넣지 않습니다.</li>
+      <li><b>새 소재 판정 시점</b>: 올린 날을 D라고 하면 D+3일에 QAC로 1차 가늠, <b>D+5일에 Attribution 구매로 확정</b>합니다(3일 집행분 + 2일 지연). 그 전에는 끄거나 늘리지 않습니다.</li>
+      <li><b>주간 보드(월요일)</b>: 직전 토·일 수치는 미확정이므로, 구매 기준 순위는 전주 토요일~이번 주 금요일 7일로 매깁니다.</li>
+      <li><b>필요한 것</b>: 소재별로 추적하려면 Attribution 태그가 광고(소재)마다 따로 있어야 합니다. Amazon 광고 콘솔은 자동 접속이 막혀 있어, 리포트 파일(CSV)을 받아서 반영합니다.</li>
+    </ul>
+  </div>
   <div class="box" style="margin-top:14px"><h3>읽을 때 주의</h3>
     <ul>
       <li>캠페인마다 최적화 이벤트가 달라(QAC / 체크아웃 시작 / 링크 클릭) 서로 다른 이벤트끼리는 비교하지 않았습니다.</li>
@@ -169,11 +179,18 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
   <div class="grid" id="grid"></div>
 </section>
 
+<section id="daily">
+  <h2>매일 소재 · 2026-11-10 (40장)</h2>
+  <p class="lead">매일 오전 10시에 툴 4개로 10장씩 만드는 신규 소재입니다. 소구점은 지금까지 성과가 좋았던 테마와 최근 트렌드에서 잡았고, 툴마다 디자인 방향이 다릅니다. 전부 영어, Meta 피드 4:5(1080×1350)이며 카피는 승인 전 초안입니다. 판정은 위 Amazon Attribution 기준(올린 날 +5일)을 따릅니다.</p>
+  <div class="tog" id="dtog" style="flex-wrap:wrap"></div>
+  <div class="grid" id="dgrid"></div>
+</section>
+
 <section id="todo">
   <h2>W47에 확인할 것</h2>
   <div class="two">
     <div class="box"><h3>올릴 때</h3><ul><li>광고 이름에 테마 ID를 넣습니다. 예: <b>W46-E1_RedRoot_ES</b></li><li>카피 승인과 스페인어 원어민 검수를 먼저 받습니다.</li></ul></div>
-    <div class="box"><h3>다음 주 분석 때</h3><ul><li>이 20장의 QAC 비용과 건수</li><li>Amazon Attribution 구매 수치(받을 수 있으면 구매 기준으로 순위 재산정)</li><li>11/07~08 테스트(V53·V54·V55)의 일주일치 결과</li></ul></div>
+    <div class="box"><h3>다음 주 분석 때</h3><ul><li>이 20장의 QAC 비용과 건수</li><li>Amazon Attribution 리포트(CSV)로 구매 기준 순위 재산정. 최근 2일은 미확정 처리</li><li>Attribution 태그가 광고(소재)별로 나뉘어 있는지 확인</li><li>11/07~08 테스트(V53·V54·V55)의 일주일치 결과</li></ul></div>
   </div>
 </section>
 
@@ -195,6 +212,54 @@ let lang="en";const g=document.getElementById("grid");
 function draw(){g.innerHTML=C.map(c=>`<article class="cr"><img src="img/${c[0]}-${lang}.jpg" alt="${c[1]} 소재" loading="lazy"><h3>${c[1]} <span class="tag${c[2]==="신규"?" w":""}">${c[2]}</span></h3><dl><div><dt>소구점</dt><dd>${c[3]}</dd></div><div><dt>근거</dt><dd>${c[4]}</dd></div><div><dt>이미지 문구</dt><dd>${lang==="en"?c[5]:c[6]}</dd></div></dl></article>`).join("");
 document.getElementById("en").setAttribute("aria-pressed",lang==="en");document.getElementById("es").setAttribute("aria-pressed",lang==="es")}
 document.getElementById("en").onclick=()=>{lang="en";draw()};document.getElementById("es").onclick=()=>{lang="es";draw()};draw();
+// 매일 소재: [툴, 파일, 이미지 문구, 제품, 소구점·근거]
+const T={figma:"피그마 · 실사 정물 + 세리프",canva:"캔바 · 타이포 포스터",local:"PC 프로그램 · 레트로 인쇄물",higgsfield:"힉스필드 · 인물 라이프스타일"};
+const D=[
+["figma","RB_AfterPieCup","The after-pie cup.","RB","추수감사절 시즌 + Recovery 카페인 0"],
+["figma","FE_RedRoot","Korea's red root. Your morning cup.","FE","전환 1위 테마 한국 홍삼 유산"],
+["figma","FE_ThisIsntCoffee","This isn't coffee.","FE","커피처럼 보이는 잔 위의 반전 문장"],
+["figma","FE_28Ingredients","28+ ingredients. One packet.","FE","성분 묶음(성과 상위) + 큰 숫자"],
+["figma","FE_IcedBeanless","Iced. Beanless.","FE","젊은층 아이스·한 단어 트렌드"],
+["figma","FE_HolidayGift","For the coffee lover who has everything.","FE","연말 선물 시즌"],
+["figma","FE_RedGinsengMorning","Red ginseng, in your morning cup.","FE","한국 홍삼 유산"],
+["figma","FE_100mgNaturally","100 mg. Naturally.","FE","천연 카페인 100 mg 사실 하나"],
+["figma","RB_CozySeason","Cozy season. Zero caffeine.","RB","겨울 저녁 + 카페인 0"],
+["figma","FE_ISwitchedHisCoffee","I switched his coffee.","FE","그의 커피를 바꿔라(아내 시점)"],
+["canva","FE_FiveBottlesOnePacket","Five bottles. One packet.","FE","성분 묶음"],
+["canva","FE_PricePerCup","About $1.67 a cup.","FE","연말 카페 가격 대비"],
+["canva","FE_POVZeroBeans","POV: your coffee has zero coffee beans.","FE","SNS 말투(POV)"],
+["canva","RB_CoffeeAt9PM","Coffee at 9 PM? Yes.","RB","질문과 답, 카페인 0"],
+["canva","FE_StillTastesLikeCoffee","Zero coffee beans. Still tastes like coffee.","FE","원두 0 + 커피 맛"],
+["canva","FE_RootsMushroomsHerbs","Roots. Mushrooms. Herbs. Coffee taste.","FE","사실 나열 트렌드"],
+["canva","FE_28Plus1Packet","28+ ingredients. One packet.","FE","성분 묶음, 숫자 강조"],
+["canva","FE_DontTellHim","It's not coffee. Don't tell him.","FE","그의 커피를 바꿔라"],
+["canva","RB_StillYourCup","Zero caffeine. Zero coffee beans. Still your cup.","RB","Recovery 카페인 0"],
+["canva","FE_RedGinsengMeets","Korea's red ginseng meets your morning cup.","FE","한국 홍삼 유산"],
+["local","FE_SwitchHisCoffee","Switch his coffee.","FE","그의 커피를 바꿔라"],
+["local","FE_Beanless","Beanless coffee? Yes.","FE","한 단어·사실 나열"],
+["local","FE_ZeroBeansQuestion","How many coffee beans are in this coffee? 0","FE","질문 + 초대형 숫자"],
+["local","FE_MorningItemized","Your morning, itemized.","FE","영수증 형식, 한 잔 약 $1.67"],
+["local","FE_RedGinsengInside","Red ginseng inside.","FE","한국 홍삼 유산"],
+["local","RB_NightCup","Night cup. 0 mg caffeine.","RB","Recovery 카페인 0"],
+["local","FE_TearPourStir","Tear. Pour. Stir.","FE","패킷 하나 + 물 5–6 oz, 쉬운 사용법"],
+["local","FE_MorningChecklist","The morning checklist.","FE","체크리스트 형식 사실 나열"],
+["local","FE_WarningZeroBeans","Warning: contains zero coffee beans.","FE","경고 라벨 패러디"],
+["local","FERB_AMPM","AM / PM","FE+RB","두 제품을 아침·저녁으로 나눠 소개"],
+["higgsfield","FE_MorningRitual","Same morning ritual. Zero coffee beans.","FE","아침 루틴 + 원두 0"],
+["higgsfield","RB_3PMCup","The 3 PM cup. 0 mg caffeine.","RB","오후 한 잔, 카페인 0"],
+["higgsfield","FE_HeDidntNotice","He didn't notice.","FE","그의 커피를 바꿔라의 다음 장면"],
+["higgsfield","RB_9PMCup","9 PM. Still having a cup.","RB","저녁 소파 장면, 카페인 0"],
+["higgsfield","FE_NoCoffeeInThis","Wait, there's no coffee in this?","FE","친구 브런치, 놀라는 반응"],
+["higgsfield","FE_DadsMorningCup","Dad's new morning cup.","FE","히스패닉 가족 아침"],
+["higgsfield","FE_BeanlessIced","Beanless.","FE","젊은층 스트리트 스냅, 아이스"],
+["higgsfield","FE_100mgZeroBeans","100 mg natural caffeine. Zero coffee beans.","FE","재택 아침, 사실 두 가지"],
+["higgsfield","RB_PieThenACup","Pie, then a cup.","RB","추수감사절 식탁, 카페인 0"],
+["higgsfield","FE_TastesLikeCoffeeIsnt","Tastes like coffee. Isn't.","FE","1인칭 시점, 반전 문장"]];
+let dt="all";const dg=document.getElementById("dgrid"),dtg=document.getElementById("dtog");
+function ddraw(){dtg.innerHTML=[["all","전체 40"],...Object.keys(T).map(k=>[k,T[k].split(" · ")[0]+" 10"])].map(b=>`<button data-k="${b[0]}" aria-pressed="${dt===b[0]}">${b[1]}</button>`).join("");
+dtg.querySelectorAll("button").forEach(b=>b.onclick=()=>{dt=b.dataset.k;ddraw()});
+dg.innerHTML=D.filter(d=>dt==="all"||d[0]===dt).map(d=>`<article class="cr"><a href="img/daily/2026-11-10/${d[0]}-${d[1]}.jpg" target="_blank" rel="noopener"><img src="img/daily/2026-11-10/${d[0]}-${d[1]}.jpg" alt="${d[2]} 소재" loading="lazy"></a><h3>${d[2]} <span class="tag${d[3]==="FE"?"":" w"}">${d[3]}</span></h3><dl><div><dt>툴 · 방향</dt><dd>${T[d[0]]}</dd></div><div><dt>소구점 · 근거</dt><dd>${d[4]}</dd></div></dl></article>`).join("")}
+ddraw();
 </script>
 </body>
 </html>
