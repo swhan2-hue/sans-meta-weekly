@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>SANS Meta 주간 보드</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* 레이아웃: 위에서 아래로 요약 → 이번 주 성과 → 다음 주 소재. 한 열, 최대 1120px */
+:root{--bg:#F5F0E6;--panel:#FFFDF8;--ink:#0F0E0D;--mute:#6B665E;--line:#DDD6C8;--mint:#C0FFEE;--mint-d:#1F8F74;--red:#E3342B;--amber:#B7791F;
+--disp:'Unbounded',system-ui,sans-serif;--body:'Inter','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:500 15px/1.55 var(--body)}
+.w{max-width:1120px;margin:0 auto;padding-block:28px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between;border-bottom:3px solid var(--ink);padding-bottom:18px}
+h1{font:900 clamp(26px,5vw,44px)/1.05 var(--disp);letter-spacing:-.03em}
+h1 span{background:var(--mint);padding:0 .18em}
+.sub{color:var(--mute);font-size:13px;max-width:520px}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0 0}
+nav a{font:600 13px var(--body);color:var(--ink);text-decoration:none;border:1.5px solid var(--ink);border-radius:99px;padding:6px 14px}
+nav a:hover,nav a:focus-visible{background:var(--ink);color:var(--mint);outline:none}
+section{margin-top:44px}
+h2{font:700 20px/1.2 var(--disp);letter-spacing:-.02em;margin-bottom:6px;text-wrap:balance}
+.lead{color:var(--mute);font-size:14px;max-width:70ch;margin-bottom:18px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:22px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.kpi b{display:block;font:900 30px/1.1 var(--disp);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.kpi span{font-size:12px;color:var(--mute);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.kpi small{display:block;color:var(--mute);font-size:12px;margin-top:4px}
+.note{background:var(--ink);color:#F5F0E6;border-radius:12px;padding:16px 20px;font-size:14px;margin-top:14px}
+.note b{color:var(--mint)}
+.rows{display:grid;gap:10px}
+.row{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px;display:grid;grid-template-columns:34px minmax(0,1.3fr) minmax(0,1.6fr);gap:6px 16px;align-items:center}
+.rk{font:900 22px var(--disp);color:var(--mint-d)}
+.row h3{font-size:16px;font-weight:700}
+.row p{font-size:13px;color:var(--mute)}
+.bar{height:14px;background:#EAE3D4;border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ink);border-radius:99px}
+.bar.bad i{background:var(--red)}
+.val{overflow-wrap:anywhere;display:flex;justify-content:space-between;gap:10px;font-size:13px;font-variant-numeric:tabular-nums;margin-top:4px}
+.val b{font-weight:700}
+.tag{display:inline-block;font:700 11px var(--body);letter-spacing:.06em;border-radius:99px;padding:3px 9px;background:var(--mint);color:var(--ink);vertical-align:middle;margin-left:6px}
+.tag.w{background:#FBE3B3;max-width:none;margin:0 0 0 6px;padding:3px 9px}
+.tag.r{background:#F9D2CF}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.two.four{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;min-width:0}
+.box h3{font-size:15px;font-weight:700;margin-bottom:8px}
+.box ul{padding-left:18px;display:grid;gap:6px;font-size:14px}
+.box li q{font-style:italic;color:var(--mute)}
+.lose{display:grid;gap:8px;font-size:13px}
+.lose div{display:grid;grid-template-columns:minmax(0,150px) 1fr 70px;gap:10px;align-items:center}
+.lose span:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.tog{display:flex;gap:6px;margin-bottom:16px}
+.tog button{font:600 13px var(--body);padding:7px 16px;border-radius:99px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.tog button[aria-pressed=true]{background:var(--ink);color:var(--mint)}
+.tog button:focus-visible{outline:3px solid var(--mint-d);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:22px 16px}
+.cr{min-width:0}
+.cr img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;box-shadow:0 6px 20px rgba(15,14,13,.16);background:#ddd}
+.cr h3{font-size:15px;font-weight:700;margin-top:10px}
+.cr dl{font-size:13px;margin-top:6px;display:grid;gap:6px}
+.cr dt{font:700 10px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.cr dd{margin:0}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:var(--mute);font-size:12px}
+@media(max-width:640px){.row{grid-template-columns:28px minmax(0,1fr)}.row .m{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<div class="w">
+<header>
+  <div>
+    <h1>SANS Meta <span>W46</span></h1>
+    <nav><a href="#perf">이번 주 성과</a><a href="#risk">주의할 문구</a><a href="#trend">트렌드</a><a href="#next">다음 주 소재</a><a href="#todo">W47 확인할 것</a></nav>
+  </div>
+  <p class="sub">Meta 광고 계정 "산스"(KRW) · 최근 7일 · 2026-11-10 조회·작성. 숫자는 Meta 광고 관리자 기준이며 Amazon 실제 구매는 포함되지 않습니다.</p>
+</header>
+
+<div class="kpis">
+  <div class="kpi"><span>7일 집행액</span><b>약 1,270만 원</b><small>광고 86개</small></div>
+  <div class="kpi"><span>가장 싼 QAC</span><b>2,197원</b><small>mz_21 · 커피 대체 테마</small></div>
+  <div class="kpi"><span>QAC 가장 많은 광고</span><b>256건</b><small>COUP_9_ESP_gl · 홍삼 유산</small></div>
+  <div class="kpi"><span>다음 주 집행 소재</span><b>20장</b><small>확장 5테마 + 신규 5테마 × EN·ES</small></div>
+</div>
+<p class="note"><b>QAC</b>는 Amazon으로 넘어가 15초 이상 머문 클릭입니다. 클릭의 질을 보는 지표이고 구매가 아닙니다. 아래 순위는 Amazon Attribution 구매 수치를 받으면 다시 매깁니다.</p>
+
+<section id="perf">
+  <h2>이번 주 성과가 좋았던 테마 5개</h2>
+  <p class="lead">막대는 QAC 1건당 비용입니다(짧을수록 좋음, 눈금 0~4,000원). 테마별로 가장 좋았던 광고 기준입니다.</p>
+  <div class="rows">
+    <div class="row"><div class="rk">1</div><div><h3>한국 홍삼 유산</h3><p>"La raíz roja de Corea" · COUP_9_ESP_gl, V26-C1_Reyes, WN25-WIN4_L1</p></div><div class="m"><div class="bar"><i style="width:65.3%"></i></div><div class="val"><b>2,612원</b><span>QAC 256 / 162 / 84건 · 스페인어에서 가장 강함</span></div></div></div>
+    <div class="row"><div class="rk">2</div><div><h3>그의 커피를 바꿔라</h3><p>아내 시점 · lover_2, C_2, D_2</p></div><div class="m"><div class="bar"><i style="width:59.1%"></i></div><div class="val"><b>2,365원</b><span>QAC 227 / 74 / 39건</span></div></div></div>
+    <div class="row"><div class="rk">3</div><div><h3>성분 묶음</h3><p>"Todo en un sobre" · V26-D5_Ingredientes</p></div><div class="m"><div class="bar"><i style="width:64.6%"></i></div><div class="val"><b>2,585원</b><span>QAC 189건</span></div></div></div>
+    <div class="row"><div class="rk">4</div><div><h3>커피 대체·업그레이드</h3><p>"No es café. Es mejor" · mz_21, esp_2, esp_3</p></div><div class="m"><div class="bar"><i style="width:54.9%"></i></div><div class="val"><b>2,197원</b><span>QAC 120 / 112 / 31건</span></div></div></div>
+    <div class="row"><div class="rk">5</div><div><h3>Recovery 카페인 0 <span class="tag w">기준 다름</span></h3><p>"No es descafeinado" · V36-UGC_NeverCaffeine, RecVisA_4</p></div><div class="m"><div class="bar"><i style="width:35.9%;background:var(--amber)"></i></div><div class="val"><b>1,434원</b><span>체크아웃 시작 275 / 235건 · QAC가 아니라 위 4개와 직접 비교 불가</span></div></div></div>
+  </div>
+
+  <div class="two" style="margin-top:14px">
+    <div class="box"><h3>부진해서 확장하지 않은 테마</h3>
+      <div class="lose">
+        <div><span>Stamina 영상</span><div class="bar bad"><i style="width:30.8%"></i></div><span>8,620원</span></div>
+        <div><span>Infomercial</span><div class="bar bad"><i style="width:35.4%"></i></div><span>9,909원</span></div>
+        <div><span>Antes/Después</span><div class="bar bad"><i style="width:37.4%"></i></div><span>10,466원</span></div>
+        <div><span>Brainrot</span><div class="bar bad"><i style="width:41.1%"></i></div><span>11,495원</span></div>
+        <div><span>Crazy / WorstName</span><div class="bar bad"><i style="width:54.8%"></i></div><span>15,339원</span></div>
+        <div><span>Bundle 리타깃</span><div class="bar bad"><i style="width:100%"></i></div><span>27,969원</span></div>
+      </div>
+      <p style="font-size:12px;color:var(--mute);margin-top:10px">눈금 0~28,000원. 할로윈·디아 데 무에르토스 시즌 아트도 부진했습니다.</p>
+    </div>
+    <div class="box"><h3>읽을 때 주의</h3>
+      <ul>
+        <li>캠페인마다 최적화 이벤트가 달라(QAC / 체크아웃 시작 / 링크 클릭) 서로 다른 이벤트끼리는 비교하지 않았습니다.</li>
+        <li>11/07~08에 만든 광고(V53·V54·V55)는 2~3일치 데이터뿐이라 판단을 미뤘습니다.</li>
+        <li>미국 계정 "Sans_Light Anchor"(USD)는 조회되지 않아 빠져 있습니다.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="risk">
+  <h2>성과는 좋지만 문구를 바꿔야 하는 광고</h2>
+  <p class="lead">상위 광고 본문에 브랜드 가이드가 금지한 표현이 있습니다. 반려나 계정 제재 위험이 있어, 다음 주 소재는 같은 테마를 이 표현 없이 다시 썼습니다.</p>
+  <div class="two four">
+    <div class="box"><h3>성적 암시·스태미나 <span class="tag r">금지</span></h3><ul><li><q>Forget the little blue pill. Meet the big red root.</q></li><li><q>Stamina that lasts all day (and night)</q></li></ul></div>
+    <div class="box"><h3>No jitters / no crash <span class="tag r">금지</span></h3><ul><li><q>Forget the jitters. Forget the afternoon crash</q></li><li><q>Sin nervios, sin el bajón</q></li></ul></div>
+    <div class="box"><h3>틀린 숫자·용어 <span class="tag w">수정</span></h3><ul><li>30 ingredientes → 28+</li><li>8 oz de agua → 5–6 oz</li><li>stick → packet / sobre</li><li>$1.33·$1.50 a day → 정가 기준 약 $1.67</li></ul></div>
+    <div class="box"><h3>그 밖에 <span class="tag r">금지</span></h3><ul><li>경쟁사 이름: <q>Ponle los cuernos a Starbucks</q></li><li>표기 없는 체험담 형식: <q>I switched his coffee for 14 days…</q></li><li>효능 주장: <q>biological upgrade</q>, <q>peak performance</q></li></ul></div>
+  </div>
+</section>
+
+<section id="trend">
+  <h2>이번 주 시장에서 본 것</h2>
+  <div class="two four">
+    <div class="box"><h3>연말 시즌 시작</h3><p>Starbucks 홀리데이 메뉴가 11/5에 나왔습니다. 카페 한 잔 값과 집에서 마시는 한 잔을 대비하기 좋은 시기입니다. → N4</p></div>
+    <div class="box"><h3>히스패닉 연말 가족 식탁</h3><p>가족 식사와 "cafecito"를 문화 코드로 쓰는 캠페인이 늘고 있습니다. → N5</p></div>
+    <div class="box"><h3>경쟁 버섯 커피</h3><p>맛과 "아침 커피 의식에 끼워 넣기"를 앞세웁니다. 일부가 쓰는 증상 훅은 SANS가 쓸 수 없습니다. 이번 주 신규 캠페인은 검색으로 확인하지 못했습니다.</p></div>
+    <div class="box"><h3>젊은층 음료 브랜드</h3><p>한 단어, 사실 나열, 스스로를 아는 농담으로 말합니다. → N1·N2·N3</p></div>
+  </div>
+</section>
+
+<section id="next">
+  <h2>다음 주에 집행할 소재 10테마</h2>
+  <p class="lead">E는 이번 주 상위 테마의 확장, N은 신규 테스트입니다. 각 테마는 영어·스페인어 1장씩, Meta 피드 4:5입니다. 카피는 승인 전 초안입니다.</p>
+  <div class="tog"><button id="en" aria-pressed="true">English</button><button id="es" aria-pressed="false">Español</button></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="todo">
+  <h2>W47에 확인할 것</h2>
+  <div class="two">
+    <div class="box"><h3>올릴 때</h3><ul><li>광고 이름에 테마 ID를 넣습니다. 예: <b>W46-E1_RedRoot_ES</b></li><li>카피 승인과 스페인어 원어민 검수를 먼저 받습니다.</li></ul></div>
+    <div class="box"><h3>다음 주 분석 때</h3><ul><li>이 20장의 QAC 비용과 건수</li><li>Amazon Attribution 구매 수치(받을 수 있으면 구매 기준으로 순위 재산정)</li><li>11/07~08 테스트(V53·V54·V55)의 일주일치 결과</li></ul></div>
+  </div>
+</section>
+
+<footer>SANS 마케팅 내부 공유용 · 매주 월요일 갱신 · 소재 배경은 생성 이미지, 제품·로고는 실제 촬영 컷</footer>
+</div>
+<script>
+const C=[
+["e1","E1 · 한국 홍삼 유산","확장","원산지와 전통. 한국에서 온 홍삼이 아침 한 잔에 들어 있다는 사실 하나.","스페인어 1위 테마(QAC 2,612원)","The red root of Korea.","La raíz roja de Corea."],
+["e2","E2 · 그의 커피를 바꿔라","확장","호기심. 배우자가 눈치채지 못할 만큼 커피 맛이라는 점을 장면으로 보여 줌.","lover_2 (2,365원). 성적 암시 문구는 뺌","Switch his coffee.","Cámbiale el café."],
+["e3","E3 · 28+ 성분, 한 패킷","확장","편의. 따로 사면 병 다섯 개인 것을 패킷 하나로.","V26-D5_Ingredientes (2,585원)","28+ ingredients. One packet.","28+ ingredientes. Un sobre."],
+["e4","E4 · Herbal coffee","확장","카테고리 정의. 원두 대신 뿌리·버섯·허브로 만든 커피.","mz_21 (2,197원)","Herbal coffee. No coffee beans.","Café herbal. Sin granos de café."],
+["e5","E5 · 디카페인이 아니라 0","확장","카페인 0 mg. 오후 3시 이후에 마시는 따뜻한 한 잔. \"Not a sleep aid\" 표기.","V36-UGC_NeverCaffeine","Not decaf. Zero.","No es descafeinado. Es cero."],
+["n1","N1 · Beanless","신규","한 단어로 정체성 잡기. 젊은층 대상, 성분 설명 없음.","가이드 13장 트랙 2 가설","Beanless","Sin granos"],
+["n2","N2 · 커피 없는 커피","신규","스스로를 아는 농담. 광고임을 숨기지 않는 톤.","트랙 2 가설","No coffee in this coffee*","Este café no tiene café*"],
+["n3","N3 · 숫자 세 줄","신규","28+ · 0 · 1. 사실만 나열하고 끝.","트랙 2 가설","28+ / 0 / 1","28+ / 0 / 1"],
+["n4","N4 · 한 잔 가격","신규","가격 대비. 카페 라떼 $5+ 옆에 집에서 약 $1.67.","Starbucks 홀리데이 메뉴 출시 시점","About $1.67 a cup.","Como $1.67 la taza."],
+["n5","N5 · 식후 한 잔","신규","문화 코드(sobremesa). 저녁 식탁에서 카페인 0으로 이어지는 대화.","히스패닉 연말 가족 식탁 트렌드","The after-dinner cup.","El cafecito de la sobremesa."]];
+let lang="en";const g=document.getElementById("grid");
+function draw(){g.innerHTML=C.map(c=>`<article class="cr"><img src="img/${c[0]}-${lang}.jpg" alt="${c[1]} 소재" loading="lazy"><h3>${c[1]} <span class="tag${c[2]==="신규"?" w":""}">${c[2]}</span></h3><dl><div><dt>소구점</dt><dd>${c[3]}</dd></div><div><dt>근거</dt><dd>${c[4]}</dd></div><div><dt>이미지 문구</dt><dd>${lang==="en"?c[5]:c[6]}</dd></div></dl></article>`).join("");
+document.getElementById("en").setAttribute("aria-pressed",lang==="en");document.getElementById("es").setAttribute("aria-pressed",lang==="es")}
+document.getElementById("en").onclick=()=>{lang="en";draw()};document.getElementById("es").onclick=()=>{lang="es";draw()};draw();
+</script>
+</body>
+</html>
