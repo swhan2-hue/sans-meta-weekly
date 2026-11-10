@@ -53,7 +53,7 @@ h2{font:700 20px/1.2 var(--disp);letter-spacing:-.02em;margin-bottom:6px;text-wr
 .box ul{padding-left:18px;display:grid;gap:6px;font-size:14px}
 .box li q{font-style:italic;color:var(--mute)}
 .lose{display:grid;gap:8px;font-size:13px}
-.lose div{display:grid;grid-template-columns:minmax(0,150px) 1fr 70px;gap:10px;align-items:center}
+.lose div{display:grid;grid-template-columns:minmax(0,190px) 1fr 104px;gap:10px;align-items:center}
 .lose span:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
 .tog{display:flex;gap:6px;margin-bottom:16px}
 .tog button{font:600 13px var(--body);padding:7px 16px;border-radius:99px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
@@ -87,7 +87,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
   
   <div class="kpi"><span>다음 주 집행 소재</span><b>20장</b><small>확장 5테마 + 신규 5테마 × EN·ES</small></div>
 </div>
-<p class="note"><b>매출전환 기준이 바뀝니다.</b> 앞으로 매출전환은 <b>Amazon Attribution 구매</b>(주문 수·매출)로 판정합니다. Attribution 수치는 약 2일 늦게 들어오므로 최근 2일은 미확정으로 둡니다. <b>QAC</b>(Amazon으로 넘어가 15초 이상 머문 클릭)는 그 전에 먼저 보는 보조 지표입니다. 아래 W46 순위는 아직 QAC 기준이며, Attribution 리포트를 받으면 구매 기준으로 다시 매깁니다.</p>
+<p class="note"><b>매출전환 기준이 바뀝니다.</b> 앞으로 매출전환은 <b>Amazon Attribution 구매</b>(주문 수·매출)로 판정합니다. Attribution 수치는 약 2일 늦게 들어오므로 최근 2일은 미확정으로 둡니다. <b>QAC</b>(Amazon으로 넘어가 15초 이상 머문 클릭)는 그 전에 먼저 보는 보조 지표입니다. 아래 ②는 QAC 기준, ③은 Attribution 구매 기준(최근 30일)입니다.</p>
 
 <section id="perf">
   <h2>이번 주 성과 ① 반응</h2>
@@ -108,6 +108,37 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
     <div class="row t"><div class="rk">3</div><div class="th"><img src="img/live/d5.jpg" alt="V26-D5_Ingredientes 영상 썸네일" loading="lazy"></div><div><h3>성분 묶음</h3><p>"Todo en un sobre" · V26-D5_Ingredientes</p></div><div class="m"><div class="bar"><i style="width:64.6%"></i></div><div class="val"><b>QAC 2,585원</b><span>QAC 189건 · 체크아웃 시작 326</span></div></div></div>
     <div class="row t"><div class="rk">4</div><div class="th"><img src="img/live/mz21.jpg" alt="mz_21 집행 소재" loading="lazy"></div><div><h3>인물 컷 (mz_21) <span class="tag r">문구 주의</span></h3><p>헤드라인은 "The Ultimate Coffee Alternative"지만 이미지는 인물 컷이라 확장하지 않음 · mz_21 두 세트</p></div><div class="m"><div class="bar"><i style="width:54.9%"></i></div><div class="val"><b>QAC 2,197원</b><span>QAC 120건 · 체크아웃 시작 274</span></div></div></div>
     <div class="row t"><div class="rk">5</div><div class="th"><img src="img/live/nces.jpg" alt="V36-UGC_NeverCaffeine_ES 영상 썸네일" loading="lazy"><img src="img/live/recvis.jpg" alt="RecVisA_4 집행 소재" loading="lazy"></div><div><h3>Recovery 카페인 0 <span class="tag w">기준 다름</span></h3><p>"No es descafeinado" · V36-UGC_NeverCaffeine, RecVisA_4</p></div><div class="m"><div class="bar"><i style="width:35.9%;background:var(--amber)"></i></div><div class="val"><b>체크아웃 1,434원</b><span>체크아웃 시작 275 / 235건 · QAC가 아니라 위 4개와 직접 비교 불가</span></div></div></div>
+  </div>
+
+  <h2 style="margin-top:40px">이번 주 성과 ③ Amazon Attribution 구매</h2>
+  <p class="lead">Amazon Attribution에서 2026-10-11~11-10(30일) 수치를 직접 읽었습니다. 합계는 클릭 41,433 · 장바구니 2,994 · <b>구매 119건 · 매출 $5,893.82</b>(클릭 후 14일 기준)입니다. 아래는 구매 3건 이상인 광고를 <b>구매 1건당 Meta 광고비</b>가 낮은 순으로 놓은 것입니다(막대 눈금 0~50만 원, 짧을수록 좋음).</p>
+  <div class="box">
+    <div class="lose" style="grid-template-columns:1fr">
+        <div><span><b>한옥·서울 야경</b><br>SUB13_HanokAboveSeoul</span><div class="bar"><i style="width:28%"></i></div><span>138,106원<br><small style="font-weight:500;color:var(--mute)">구매 5 · $249.95</small></span></div>
+        <div><span><b>그의 커피를 바꿔라</b><br>C_2</span><div class="bar"><i style="width:30%"></i></div><span>148,204원<br><small style="font-weight:500;color:var(--mute)">구매 4 · $199.96</small></span></div>
+        <div><span><b>저녁 8시 영상(Recovery)</b><br>HFV2-EN_8pmVideo</span><div class="bar"><i style="width:31%"></i></div><span>157,109원<br><small style="font-weight:500;color:var(--mute)">구매 5 · $199.96</small></span></div>
+        <div><span><b>스페인어 영상 VD_5</b><br>ESP_VD_5</span><div class="bar"><i style="width:37%"></i></div><span>182,693원<br><small style="font-weight:500;color:var(--mute)">구매 9 · $449.91</small></span></div>
+        <div><span><b>스페인어 이미지 esp_1</b><br>esp_1</span><div class="bar"><i style="width:40%"></i></div><span>198,746원<br><small style="font-weight:500;color:var(--mute)">구매 7 · $344.93</small></span></div>
+        <div><span><b>경고 라벨 패러디(ES)</b><br>V18-W_Warning_ES</span><div class="bar"><i style="width:41%"></i></div><span>204,243원<br><small style="font-weight:500;color:var(--mute)">구매 3 · $149.97</small></span></div>
+        <div><span><b>홍삼 유산 · Reyes</b><br>V26-C1</span><div class="bar"><i style="width:42%"></i></div><span>209,518원<br><small style="font-weight:500;color:var(--mute)">구매 3 · $149.97</small></span></div>
+        <div><span><b>인물 컷 (문구 주의)</b><br>mz_21</span><div class="bar"><i style="width:44%"></i></div><span>217,929원<br><small style="font-weight:500;color:var(--mute)">구매 3 · $149.97</small></span></div>
+        <div><span><b>성분 묶음 · Ingredientes</b><br>V26-D5</span><div class="bar"><i style="width:48%"></i></div><span>237,935원<br><small style="font-weight:500;color:var(--mute)">구매 3 · $149.97</small></span></div>
+        <div><span><b>한국 홍삼</b><br>SUB01_KoreanRedGinseng</span><div class="bar"><i style="width:55%"></i></div><span>276,676원<br><small style="font-weight:500;color:var(--mute)">구매 4 · $199.96</small></span></div>
+        <div><span><b>밤까지 가는 에너지 (문구 주의)</b><br>esp_2</span><div class="bar"><i style="width:57%"></i></div><span>286,408원<br><small style="font-weight:500;color:var(--mute)">구매 7 · $349.93</small></span></div>
+        <div><span><b>홍삼 유산 · La raíz roja</b><br>COUP_9_ESP</span><div class="bar"><i style="width:67%"></i></div><span>334,972원<br><small style="font-weight:500;color:var(--mute)">구매 8 · $399.92</small></span></div>
+        <div><span><b>Recovery 카페인 0</b><br>RecVisA_4</span><div class="bar"><i style="width:73%"></i></div><span>366,463원<br><small style="font-weight:500;color:var(--mute)">구매 5 · $249.95</small></span></div>
+        <div><span><b>스페인어 영상 VD_3</b><br>ESP_VD_3</span><div class="bar"><i style="width:80%"></i></div><span>400,578원<br><small style="font-weight:500;color:var(--mute)">구매 4 · $199.96</small></span></div>
+        <div><span><b>그의 커피를 바꿔라 · lover_2</b><br>lover_2</span><div class="bar"><i style="width:94%"></i></div><span>470,087원<br><small style="font-weight:500;color:var(--mute)">구매 4 · $199.96</small></span></div>
+    </div>
+    <p style="font-size:12px;color:var(--mute);margin-top:12px">광고비는 같은 기간 Meta 지출 상위 150개 광고 중 이름이 같은 광고(_gl, _v2, S3X_ 변형 포함)를 합친 값이라 근사치입니다. 최근 2일(11/09~10)은 Attribution이 덜 들어온 상태입니다. 구매 건수가 3~9건으로 작아 순위는 참고용입니다. D_1(구매 6)과 opt_symbol(구매 6)은 Meta 광고와 이름이 맞지 않아 뺐습니다.</p>
+  </div>
+  <div class="box" style="margin-top:14px"><h3>QAC 순위와 달라진 점</h3>
+    <ul>
+      <li><b>한옥·서울 야경</b>은 QAC로는 판단 보류였는데, 구매 기준으로는 1건당 광고비가 가장 낮습니다(구매 5건).</li>
+      <li><b>그의 커피를 바꿔라</b>는 C_2는 효율이 좋지만 lover_2는 1건당 약 47만 원으로 가장 나쁩니다. QAC는 lover_2가 더 좋았습니다.</li>
+      <li><b>홍삼 유산 COUP_9_ESP</b>는 QAC 건수 1위였지만 구매 1건당 약 33만 원으로 중하위입니다.</li>
+      <li>정가가 $49.99인데 구매 1건당 광고비가 가장 좋은 소재도 약 14만 원입니다. Attribution에 잡힌 구매만 보면 모든 광고가 광고비를 회수하지 못하고 있습니다.</li>
+    </ul>
   </div>
 
   <div class="two" style="margin-top:14px">
