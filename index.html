@@ -307,7 +307,7 @@ dg.innerHTML=D.filter(d=>dt==="all"||d[0]===dt).map(d=>{const h=dl==="es"?d[5]:d
 document.getElementById("den").onclick=()=>{dl="en";ddraw()};document.getElementById("des").onclick=()=>{dl="es";ddraw()};
 ddraw();
 // 아이디어 보드: 구글 시트(Apps Script 웹 앱)에 저장하고 읽어 온다. 주소가 비어 있으면 안내만 보인다.
-const IDEA_API="";
+const IDEA_API="https://script.google.com/macros/s/AKfycbym-I_4hOTOnchDDpzeFECqLMzPzjbGZpYHJgL5wV9xRnb6N2wBh1MbI1K0NCmyodJZ/exec";
 const il=document.getElementById("ilist"),im=document.getElementById("imsg"),ifm=document.getElementById("iform"),ib=document.getElementById("isend");
 function imsg(t,err){im.textContent=t;im.className=err?"err":""}
 function irender(rows){il.textContent="";if(!rows.length){const p=document.createElement("p");p.className="lead";p.textContent="아직 등록된 아이디어가 없습니다. 첫 아이디어를 적어 주세요.";il.append(p);return}
