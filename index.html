@@ -75,7 +75,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
 <header>
   <div>
     <h1>SANS Meta <span>W46</span></h1>
-    <nav><a href="#perf">반응 · 매출전환</a><a href="#risk">주의할 문구</a><a href="#trend">트렌드</a><a href="#next">다음 주 소재</a><a href="#daily">매일 소재 40장</a><a href="#todo">W47 확인할 것</a></nav>
+    <nav><a href="#perf">반응 · 매출전환</a><a href="#risk">주의할 문구</a><a href="#trend">트렌드</a><a href="#next">다음 주 소재</a><a href="#daily">매일 소재 30장</a><a href="#todo">W47 확인할 것</a></nav>
   </div>
   <p class="sub">Meta 광고 계정 "산스"(KRW) · 최근 7일 · 2026-11-10 조회·작성. 숫자는 Meta 광고 관리자 기준이며 Amazon 실제 구매(Amazon Attribution)는 아직 포함되지 않았습니다.</p>
 </header>
@@ -194,8 +194,8 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
 </section>
 
 <section id="daily">
-  <h2>매일 소재 · 2026-11-10 (40장)</h2>
-  <p class="lead">매일 오전 10시에 툴 4개로 10장씩 만드는 신규 소재입니다. 소구점은 지금까지 성과가 좋았던 테마와 최근 트렌드에서 잡았고, 툴마다 디자인 방향이 다릅니다. 전부 영어, Meta 피드 4:5(1080×1350)이며 카피는 승인 전 초안입니다. 판정은 위 Amazon Attribution 기준(올린 날 +5일)을 따릅니다.</p>
+  <h2>매일 소재 · 2026-11-11 (30장)</h2>
+  <p class="lead">매일 오전 10시에 툴 4개로 10장씩 만드는 신규 소재입니다. 소구점은 지금까지 성과가 좋았던 테마와 최근 트렌드에서 잡았고, 툴마다 디자인 방향이 다릅니다. 전부 영어, Meta 피드 4:5(1080×1350)이며 카피는 승인 전 초안입니다. 판정은 위 Amazon Attribution 기준(올린 날 +5일)을 따릅니다. 오늘은 힉스필드 로그인이 풀려 있어 3개 툴 30장입니다. 오늘의 트렌드: 카페 홀리데이 메뉴 출시(11/5~), 낮 시간 Friendsgiving·추수감사절 식탁, 첫서리·겨울 저녁.</p>
   <div class="tog" id="dtog" style="flex-wrap:wrap"></div>
   <div class="grid" id="dgrid"></div>
 </section>
@@ -229,50 +229,40 @@ document.getElementById("en").onclick=()=>{lang="en";draw()};document.getElement
 // 매일 소재: [툴, 파일, 이미지 문구, 제품, 소구점·근거]
 const T={figma:"피그마 · 실사 정물 + 세리프",canva:"캔바 · 타이포 포스터",local:"PC 프로그램 · 레트로 인쇄물",higgsfield:"힉스필드 · 인물 라이프스타일"};
 const D=[
-["figma","RB_AfterPieCup","The after-pie cup.","RB","추수감사절 시즌 + Recovery 카페인 0"],
-["figma","FE_RedRoot","Korea's red root. Your morning cup.","FE","전환 1위 테마 한국 홍삼 유산"],
-["figma","FE_ThisIsntCoffee","This isn't coffee.","FE","커피처럼 보이는 잔 위의 반전 문장"],
-["figma","FE_28Ingredients","28+ ingredients. One packet.","FE","성분 묶음(성과 상위) + 큰 숫자"],
-["figma","FE_IcedBeanless","Iced. Beanless.","FE","젊은층 아이스·한 단어 트렌드"],
-["figma","FE_HolidayGift","For the coffee lover who has everything.","FE","연말 선물 시즌"],
-["figma","FE_RedGinsengMorning","Red ginseng, in your morning cup.","FE","한국 홍삼 유산"],
-["figma","FE_100mgNaturally","100 mg. Naturally.","FE","천연 카페인 100 mg 사실 하나"],
-["figma","RB_CozySeason","Cozy season. Zero caffeine.","RB","겨울 저녁 + 카페인 0"],
-["figma","FE_ISwitchedHisCoffee","I switched his coffee.","FE","그의 커피를 바꿔라(아내 시점)"],
-["canva","FE_FiveBottlesOnePacket","Five bottles. One packet.","FE","성분 묶음"],
-["canva","FE_PricePerCup","About $1.67 a cup.","FE","연말 카페 가격 대비"],
-["canva","FE_POVZeroBeans","POV: your coffee has zero coffee beans.","FE","SNS 말투(POV)"],
-["canva","RB_CoffeeAt9PM","Coffee at 9 PM? Yes.","RB","질문과 답, 카페인 0"],
-["canva","FE_StillTastesLikeCoffee","Zero coffee beans. Still tastes like coffee.","FE","원두 0 + 커피 맛"],
-["canva","FE_RootsMushroomsHerbs","Roots. Mushrooms. Herbs. Coffee taste.","FE","사실 나열 트렌드"],
-["canva","FE_28Plus1Packet","28+ ingredients. One packet.","FE","성분 묶음, 숫자 강조"],
-["canva","FE_DontTellHim","It's not coffee. Don't tell him.","FE","그의 커피를 바꿔라"],
-["canva","RB_StillYourCup","Zero caffeine. Zero coffee beans. Still your cup.","RB","Recovery 카페인 0"],
-["canva","FE_RedGinsengMeets","Korea's red ginseng meets your morning cup.","FE","한국 홍삼 유산"],
-["local","FE_SwitchHisCoffee","Switch his coffee.","FE","그의 커피를 바꿔라"],
-["local","FE_Beanless","Beanless coffee? Yes.","FE","한 단어·사실 나열"],
-["local","FE_ZeroBeansQuestion","How many coffee beans are in this coffee? 0","FE","질문 + 초대형 숫자"],
-["local","FE_MorningItemized","Your morning, itemized.","FE","영수증 형식, 한 잔 약 $1.67"],
-["local","FE_RedGinsengInside","Red ginseng inside.","FE","한국 홍삼 유산"],
-["local","RB_NightCup","Night cup. 0 mg caffeine.","RB","Recovery 카페인 0"],
-["local","FE_TearPourStir","Tear. Pour. Stir.","FE","패킷 하나 + 물 5–6 oz, 쉬운 사용법"],
-["local","FE_MorningChecklist","The morning checklist.","FE","체크리스트 형식 사실 나열"],
-["local","FE_WarningZeroBeans","Warning: contains zero coffee beans.","FE","경고 라벨 패러디"],
-["local","FERB_AMPM","AM / PM","FE+RB","두 제품을 아침·저녁으로 나눠 소개"],
-["higgsfield","FE_MorningRitual","Same morning ritual. Zero coffee beans.","FE","아침 루틴 + 원두 0"],
-["higgsfield","RB_3PMCup","The 3 PM cup. 0 mg caffeine.","RB","오후 한 잔, 카페인 0"],
-["higgsfield","FE_HeDidntNotice","He didn't notice.","FE","그의 커피를 바꿔라의 다음 장면"],
-["higgsfield","RB_9PMCup","9 PM. Still having a cup.","RB","저녁 소파 장면, 카페인 0"],
-["higgsfield","FE_NoCoffeeInThis","Wait, there's no coffee in this?","FE","친구 브런치, 놀라는 반응"],
-["higgsfield","FE_DadsMorningCup","Dad's new morning cup.","FE","히스패닉 가족 아침"],
-["higgsfield","FE_BeanlessIced","Beanless.","FE","젊은층 스트리트 스냅, 아이스"],
-["higgsfield","FE_100mgZeroBeans","100 mg natural caffeine. Zero coffee beans.","FE","재택 아침, 사실 두 가지"],
-["higgsfield","RB_PieThenACup","Pie, then a cup.","RB","추수감사절 식탁, 카페인 0"],
-["higgsfield","FE_TastesLikeCoffeeIsnt","Tastes like coffee. Isn't.","FE","1인칭 시점, 반전 문장"]];
+["figma","FE_FromSeoulWithRoots","From Seoul, with roots.","FE","한옥·서울 야경 + 한국 홍삼 유산"],
+["figma","RB_AfterTheTurkey","After the turkey, a cup.","RB","추수감사절 식탁 + 저녁 한 잔(카페인 0)"],
+["figma","FE_HolidayLatteMath","Holiday latte: $5+. This: about $1.67.","FE","카페 홀리데이 메뉴 출시(11/5~) + 한 잔 가격"],
+["figma","FE_SupplementShelf","Your supplement shelf, in one packet.","FE","성분 묶음(28+)"],
+["figma","RB_PassThePie","Pass the pie. Pour the cup.","RB","낮 시간 Friendsgiving 트렌드 + 카페인 0"],
+["figma","FE_SameMugNewCup","Same mug. New cup.","FE","그의 커피를 바꿔라"],
+["figma","FE_HanokMorning","A hanok morning, anywhere.","FE","한옥 테마 + 한국 홍삼"],
+["figma","RB_FirstFrost","First frost. Zero caffeine.","RB","첫서리·겨울 저녁 + 카페인 0"],
+["figma","FE_RootBehindRitual","The root behind the ritual.","FE","한국 홍삼 유산, 원료 극접사"],
+["figma","FERB_MorningNightCup","Morning cup. Night cup.","FE+RB","두 제품을 아침·저녁으로"],
+["canva","FE_HolidayMenuMath","Holiday menu math. $1.67 about a cup.","FE","카페 홀리데이 메뉴 시즌 + 한 잔 가격"],
+["canva","RB_NotDecafZero","Not decaf. Zero.","RB","Recovery 카페인 0"],
+["canva","FE_RedGinsengInAPacket","Korean red ginseng. In a packet.","FE","한국 홍삼 유산"],
+["canva","FE_HeStillThinksItsCoffee","He still thinks it's coffee.","FE","그의 커피를 바꿔라"],
+["canva","FE_28PlusZeroBeans","28+ ingredients. 0 coffee beans.","FE","성분 묶음 + 원두 0, 숫자 대비"],
+["canva","FE_SkipTheHolidayLine","Skip the holiday line.","FE","홀리데이 카페 줄 + 집에서 약 $1.67"],
+["canva","RB_AfterDinnerStillACup","After dinner? Still a cup.","RB","저녁 한 잔, 카페인 0"],
+["canva","FE_SeoulToYourMug","From Seoul to your mug.","FE","한국 원산지·홍삼"],
+["canva","RB_PastYourCutoff","Past your caffeine cutoff?","RB","오후 카페인 끊는 사람 + 0 mg"],
+["canva","FE_OnePacketWaterDone","One packet. Water. Done.","FE","쉬운 사용법(패킷 + 물 5–6 oz)"],
+["local","FE_GreetingsFromKorea","Greetings from Korea","FE","레트로 엽서, 한옥 + 홍삼"],
+["local","RB_TonightsMenu","Tonight's menu: the 0 mg cup.","RB","추수감사절 메뉴판 + 카페인 0"],
+["local","FE_PriceCheck","Price check: $1.67 about a cup.","FE","가격표, $49.99 / 30 packets"],
+["local","FE_RecipeCard","Recipe Nº 01: the morning cup.","FE","레시피 카드, 패킷 + 물 5–6 oz"],
+["local","FE_PacketFacts","What's in the packet?","FE","성분표 형식 사실 나열"],
+["local","FE_HeAskedWeSmiled","He asked. We smiled.","FE","그의 커피를 바꿔라, 만화 컷"],
+["local","RB_LateCupClub","The late cup club. 0 mg.","RB","오후 3시 이후 배지, 카페인 0"],
+["local","FE_KoreanTraditionStamp","A Korean tradition, in a packet.","FE","우표 형식, 한국 홍삼"],
+["local","FERB_TwoTickets","Two tickets.","FE+RB","아침·저녁 입장권 2장"],
+["local","FE_OpenNoBeans","Coffee. Open. No beans.","FE","네온 간판, 원두 0"]];
 let dt="all";const dg=document.getElementById("dgrid"),dtg=document.getElementById("dtog");
-function ddraw(){dtg.innerHTML=[["all","전체 40"],...Object.keys(T).map(k=>[k,T[k].split(" · ")[0]+" 10"])].map(b=>`<button data-k="${b[0]}" aria-pressed="${dt===b[0]}">${b[1]}</button>`).join("");
+function ddraw(){dtg.innerHTML=[["all","전체 "+D.length],...Object.keys(T).filter(k=>D.some(d=>d[0]===k)).map(k=>[k,T[k].split(" · ")[0]+" "+D.filter(d=>d[0]===k).length])].map(b=>`<button data-k="${b[0]}" aria-pressed="${dt===b[0]}">${b[1]}</button>`).join("");
 dtg.querySelectorAll("button").forEach(b=>b.onclick=()=>{dt=b.dataset.k;ddraw()});
-dg.innerHTML=D.filter(d=>dt==="all"||d[0]===dt).map(d=>`<article class="cr"><a href="img/daily/2026-11-10/${d[0]}-${d[1]}.jpg" target="_blank" rel="noopener"><img src="img/daily/2026-11-10/${d[0]}-${d[1]}.jpg" alt="${d[2]} 소재" loading="lazy"></a><h3>${d[2]} <span class="tag${d[3]==="FE"?"":" w"}">${d[3]}</span></h3><dl><div><dt>툴 · 방향</dt><dd>${T[d[0]]}</dd></div><div><dt>소구점 · 근거</dt><dd>${d[4]}</dd></div></dl></article>`).join("")}
+dg.innerHTML=D.filter(d=>dt==="all"||d[0]===dt).map(d=>`<article class="cr"><a href="img/daily/2026-11-11/${d[0]}-${d[1]}.jpg" target="_blank" rel="noopener"><img src="img/daily/2026-11-11/${d[0]}-${d[1]}.jpg" alt="${d[2]} 소재" loading="lazy"></a><h3>${d[2]} <span class="tag${d[3]==="FE"?"":" w"}">${d[3]}</span></h3><dl><div><dt>툴 · 방향</dt><dd>${T[d[0]]}</dd></div><div><dt>소구점 · 근거</dt><dd>${d[4]}</dd></div></dl></article>`).join("")}
 ddraw();
 </script>
 </body>
