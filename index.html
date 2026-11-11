@@ -75,7 +75,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
 <header>
   <div>
     <h1>SANS Meta <span>W46</span></h1>
-    <nav><a href="#perf">반응 · 매출전환</a><a href="#risk">주의할 문구</a><a href="#trend">트렌드</a><a href="#next">다음 주 소재</a><a href="#daily">매일 소재 30장</a><a href="#todo">W47 확인할 것</a></nav>
+    <nav><a href="#perf">반응 · 매출전환</a><a href="#risk">주의할 문구</a><a href="#trend">트렌드</a><a href="#next">다음 주 소재</a><a href="#daily">매일 소재 40장</a><a href="#todo">W47 확인할 것</a></nav>
   </div>
   <p class="sub">Meta 광고 계정 "산스"(KRW) · 최근 7일 · 2026-11-10 조회·작성. 숫자는 Meta 광고 관리자 기준이며 Amazon 실제 구매(Amazon Attribution)는 아직 포함되지 않았습니다.</p>
 </header>
@@ -194,8 +194,8 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
 </section>
 
 <section id="daily">
-  <h2>매일 소재 · 2026-11-11 (30장)</h2>
-  <p class="lead">매일 오전 10시에 툴 4개로 10장씩 만드는 신규 소재입니다. 소구점은 지금까지 성과가 좋았던 테마와 최근 트렌드에서 잡았고, 툴마다 디자인 방향이 다릅니다. 전부 영어, Meta 피드 4:5(1080×1350)이며 카피는 승인 전 초안입니다. 판정은 위 Amazon Attribution 기준(올린 날 +5일)을 따릅니다. 오늘은 힉스필드 로그인이 풀려 있어 3개 툴 30장입니다. 오늘의 트렌드: 카페 홀리데이 메뉴 출시(11/5~), 낮 시간 Friendsgiving·추수감사절 식탁, 첫서리·겨울 저녁.</p>
+  <h2>매일 소재 · 2026-11-11 (40장)</h2>
+  <p class="lead">매일 오전 10시에 툴 4개로 10장씩 만드는 신규 소재입니다. 소구점은 지금까지 성과가 좋았던 테마와 최근 트렌드에서 잡았고, 툴마다 디자인 방향이 다릅니다. 전부 영어, Meta 피드 4:5(1080×1350)이며 카피는 승인 전 초안입니다. 판정은 위 Amazon Attribution 기준(올린 날 +5일)을 따릅니다. 힉스필드 인물은 AI 생성이라 "Dramatization"을 표기했습니다. 오늘의 트렌드: 카페 홀리데이 메뉴 출시(11/5~), 낮 시간 Friendsgiving·추수감사절 식탁, 첫서리·겨울 저녁.</p>
   <div class="tog" id="dtog" style="flex-wrap:wrap"></div>
   <div class="grid" id="dgrid"></div>
 </section>
@@ -258,7 +258,17 @@ const D=[
 ["local","RB_LateCupClub","The late cup club. 0 mg.","RB","오후 3시 이후 배지, 카페인 0"],
 ["local","FE_KoreanTraditionStamp","A Korean tradition, in a packet.","FE","우표 형식, 한국 홍삼"],
 ["local","FERB_TwoTickets","Two tickets.","FE+RB","아침·저녁 입장권 2장"],
-["local","FE_OpenNoBeans","Coffee. Open. No beans.","FE","네온 간판, 원두 0"]];
+["local","FE_OpenNoBeans","Coffee. Open. No beans.","FE","네온 간판, 원두 0"],
+["higgsfield","FE_GuessWhatsNotInHisCup","Guess what's not in his cup.","FE","그의 커피를 바꿔라(아내 시점)"],
+["higgsfield","RB_PiesOutCupsUp","Pie's out. Cups up.","RB","낮 시간 Friendsgiving 트렌드 + 카페인 0"],
+["higgsfield","FE_SeoulWayMorning","Your morning, the Seoul way.","FE","한옥 테마 + 한국 홍삼"],
+["higgsfield","FE_HolidayDrink167","My holiday drink: about $1.67.","FE","카페 홀리데이 메뉴 시즌 + 한 잔 가격"],
+["higgsfield","RB_DishesDoneCupTime","Dishes done. Cup time.","RB","저녁 한 잔, 카페인 0"],
+["higgsfield","FE_GrandmaKnewGinseng","Grandma knew ginseng first.","FE","한국 홍삼 유산, 세대 장면"],
+["higgsfield","FE_28Before9AM","28+ ingredients before 9 AM.","FE","성분 묶음, 재택 아침"],
+["higgsfield","RB_3PMCupCanBeZero","Your 3 PM cup can be zero.","RB","오후 카페인 끊는 사람 + 0 mg"],
+["higgsfield","FE_IcedInNovember","Iced in November. Beanless all year.","FE","젊은층 아이스, 원두 0"],
+["higgsfield","FE_CafecitoMinusBeans","Cafecito, minus the beans.","FE","히스패닉 가족 아침(카페시토)"]];
 let dt="all";const dg=document.getElementById("dgrid"),dtg=document.getElementById("dtog");
 function ddraw(){dtg.innerHTML=[["all","전체 "+D.length],...Object.keys(T).filter(k=>D.some(d=>d[0]===k)).map(k=>[k,T[k].split(" · ")[0]+" "+D.filter(d=>d[0]===k).length])].map(b=>`<button data-k="${b[0]}" aria-pressed="${dt===b[0]}">${b[1]}</button>`).join("");
 dtg.querySelectorAll("button").forEach(b=>b.onclick=()=>{dt=b.dataset.k;ddraw()});
