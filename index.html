@@ -359,7 +359,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
 </section>
 
 <section id="daily">
-  <h2>매일 소재 · 2026-11-13 (40장)</h2>
+  <h2>매일 소재 · 2026-11-16 (40장)</h2>
   <p class="lead">매일 오전 10시 · 툴 4개 × 10장 · 4:5 · 카피는 승인 전 초안 · 이미지를 누르면 크게 봅니다</p>
   <div class="tog"><button id="den" aria-pressed="true">English</button><button id="des" aria-pressed="false">Español</button></div>
   <div class="tog" id="dtog" style="flex-wrap:wrap"></div>
@@ -423,51 +423,51 @@ document.getElementById("en").onclick=()=>{lang="en";draw()};document.getElement
 // 매일 소재: [툴, 파일, 이미지 문구, 제품, 소구점·근거]
 const T={figma:"피그마 · 실사 정물 + 세리프",canva:"캔바 · 타이포 포스터",local:"PC 프로그램 · 레트로 인쇄물",higgsfield:"힉스필드 · 인물 라이프스타일"};
 const D=[
-["figma","FE_HanokFirstCup","Hanok morning. First cup.","FE","한옥·한국 홍삼 아침 의식","Mañana en el hanok. Primera taza."],
-["figma","FE_ARootNotABean","A root, not a bean.","FE","한국 홍삼 원물 극접사","Una raíz, no un grano."],
-["figma","FE_ThanksgivingFirstCup","Thanksgiving morning. First cup, no beans.","FE","추수감사절(11/26) 아침 식탁","Acción de Gracias. Primera taza, sin granos."],
-["figma","RB_PieServedZero","Pie's served. Caffeine: zero.","RB","추수감사절 저녁 + 카페인 0","Pay servido. Cafeína: cero."],
-["figma","FE_DessertOnThePlate","Dessert on the plate. Not in the cup.","FE","카페 홀리데이 메뉴의 디저트형 음료(티라미수·쿠키버터, 11/3~5 출시) 반대","El postre, en el plato. No en la taza."],
-["figma","FE_HisThermosOurCup","His thermos. Our cup.","FE","그의 커피를 바꿔라","Su termo. Nuestro café."],
-["figma","FE_ShelfToPacket","Five bottles on the shelf. One packet in the cup.","FE","성분 묶음","Cinco frascos en la repisa. Un sobre en la taza."],
-["figma","FE_FirstFrostFirstCup","First frost. First cup.","FE","초겨울 시즌, 원두 0","Primera helada. Primera taza."],
-["figma","RB_CandlesOnCaffeineOff","Candles on. Caffeine off.","RB","저녁 한 잔, 카페인 0","Velas encendidas. Cafeína apagada."],
-["figma","FE_SeoulWakesEarly","Seoul wakes early. So does your cup.","FE","서울 새벽 풍경 + 홍삼","Seúl madruga. Tu taza también."],
-["canva","FE_DoTheMath","$1.67. Do the math.","FE","한 잔 가격(약 $1.67)","$1.67. Haz la cuenta."],
-["canva","RB_PastThreePickZero","Past 3 PM? Pick zero.","RB","오후 카페인 끊는 사람 + 0 mg","¿Pasadas las 3 PM? Elige cero."],
-["canva","FE_KoreasRedRoot","Korea's red root. Your morning.","FE","한국 홍삼 유산","La raíz roja de Corea. Tu mañana."],
-["canva","FE_HeAskedForSeconds","I switched his coffee. He asked for seconds.","FE","그의 커피를 바꿔라(아내 시점)","Le cambié el café. Pidió otra taza."],
-["canva","FE_28In1","28+ in 1.","FE","성분 묶음, 숫자 하나","28+ en 1."],
-["canva","FE_BeansZeroCupsPlenty","Beans: 0. Cups: plenty.","FE","원두 0 스코어보드","Granos: 0. Tazas: muchas."],
-["canva","FE_DessertDrinkSeason","Dessert-drink season? Not this cup.","FE","디저트형 홀리데이 음료 트렌드의 반대","Temporada de bebidas-postre. Esta taza, no."],
-["canva","RB_FeastFirstZeroAfter","Feast first. Zero after.","RB","추수감사절 저녁 + 카페인 0","Primero, el banquete. Después, cero."],
-["canva","FE_YourMugWontKnow","Your mug won't know the difference.","FE","원두 0, 자기 인식 유머","Tu taza ni notará la diferencia."],
-["canva","FERB_SevenAMSevenPM","7 AM: Focus. 7 PM: Recovery.","FE+RB","두 제품 아침·저녁","7 AM: Focus. 7 PM: Recovery."],
-["local","FE_AirMailFromSeoul","Air mail from Seoul.","FE","항공우편 엽서, 한국 홍삼","Correo aéreo desde Seúl."],
-["local","FE_TodaysSpecial167","Today's special: about $1.67.","FE","다이너 메뉴판, 한 잔 가격","Especial del día: como $1.67."],
-["local","RB_LateShowZero","Late show. Zero caffeine.","RB","TV 편성표, 저녁 카페인 0","Función nocturna. Cero cafeína."],
-["local","FE_BeansCheckedOut","Coffee beans: checked out.","FE","도서 대출 카드, 원두 0","Granos de café: ya no están."],
-["local","FE_OnTheMenuNoBeans","On the menu: a cup with no beans.","FE","추수감사절 메뉴 카드","En el menú: una taza sin granos."],
-["local","FE_CaseFileHisCoffee","Case file: his coffee.","FE","수사 파일, 그의 커피를 바꿔라","Expediente: su café."],
-["local","FE_GrownFromRoots","Grown from roots, not beans.","FE","씨앗 봉투, 원료","Hecho de raíces, no de granos."],
-["local","RB_GameNightZero","Game night. Caffeine: 0.","RB","스코어보드, 저녁 카페인 0","Noche de juegos. Cafeína: 0."],
-["local","FERB_TwoDepartures","Two cups. Two departures.","FE+RB","출발 안내판, 아침·오후 3시 이후","Dos tazas. Dos salidas."],
-["local","FE_SkipThePunchCard","Skip the punch card.","FE","카페 적립 카드 대신 약 $1.67","Olvida la tarjeta de sellos."],
-["higgsfield","FE_SameMugNeverAsked","Same mug. He never asked.","FE","그의 커피를 바꿔라(아내 시점)","La misma taza. Nunca preguntó."],
-["higgsfield","FE_AbuelasCafecitoKoreanRoots","Abuela's cafecito, Korean roots.","FE","히스패닉 가족 + 한국 홍삼","El cafecito de la abuela, con raíces coreanas."],
-["higgsfield","RB_FriendsPie0mg","Friends, pie, 0 mg.","RB","Friendsgiving 저녁 + 카페인 0","Amigos, pay y 0 mg."],
-["higgsfield","FE_Train710CupReady","7:10 train. Cup's already made.","FE","출근길","Tren de las 7:10. La taza ya está lista."],
-["higgsfield","FE_HanokHabitYourMug","A hanok habit, now in your mug.","FE","한옥 + 홍삼 유산","Una costumbre del hanok, ahora en tu taza."],
-["higgsfield","RB_KnitNightZero","Knit night. Zero caffeine.","RB","저녁 취미 + 카페인 0","Noche de tejer. Cero cafeína."],
-["higgsfield","FE_IcedCarReady","Iced. Beanless. Car-ready.","FE","젊은층 아이스","Con hielo. Sin granos. Listo para el auto."],
-["higgsfield","FE_ColdPorchWarmCup","Cold porch. Warm cup. No beans.","FE","늦가을 아침","Porche frío. Taza caliente. Sin granos."],
-["higgsfield","RB_DinnersDoneOneMore","Dinner's done. One more cup, 0 mg.","RB","저녁 식사 후 + 카페인 0","Terminó la cena. Una taza más, 0 mg."],
-["higgsfield","FE_ClearedTheShelf","He cleared the supplement shelf.","FE","성분 묶음","Despejó la repisa de suplementos."]];
+["figma","FE_HanokDawnGinseng","Dawn in the hanok. Ginseng in the cup.","FE","한옥·홍삼 아침 의식(구매 상위 테마)","Amanece en el hanok. Ginseng en la taza."],
+["figma","FE_RootCameFirst","The root came first. The ritual followed.","FE","홍삼 원물 극접사 + 한국산","Primero, la raíz. Después, el ritual."],
+["figma","FE_GuestsAtEight","Guests at 8. Cups for everyone.","FE","추수감사절(11/26) 손님맞이","Visitas a las 8. Una taza para todos."],
+["figma","RB_DarkByFive","Dark by 5. Caffeine: zero.","RB","서머타임 종료 후 이른 일몰 + 카페인 0","Oscurece a las 5. Cafeína: cero."],
+["figma","FE_PrepDayOnePacket","Prep day starts with one packet.","FE","추수감사절 요리 준비 아침","El día de cocinar empieza con un sobre."],
+["figma","FE_StillCallsItHisCoffee","He still calls it “his coffee.”","FE","그의 커피를 바꿔라","Él todavía le dice “mi café.”"],
+["figma","FE_BottlesRetired","Five bottles, retired. One packet, hired.","FE","성분 묶음(11/12 구매 발생 BeforeNowShelf 방향)","Cinco frascos, jubilados. Un sobre, contratado."],
+["figma","FE_EarlyFlightCarryOn","Early flight. Packet in the carry-on.","FE","연휴 이동(항공)","Vuelo temprano. El sobre, en la maleta de mano."],
+["figma","RB_LeftoversAtNine","Leftovers at 9. Caffeine at zero.","RB","추수감사절 저녁 + 카페인 0","Sobras a las 9. Cafeína en cero."],
+["figma","FE_FirstSnowSeoul","First snow in Seoul. Red ginseng in the cup.","FE","서울 첫눈 + 홍삼","Primera nieve en Seúl. Ginseng rojo en la taza."],
+["canva","FE_SwitchedInOctober","Switched his coffee in October. He hasn't noticed.","FE","그의 커피를 바꿔라(아내 시점)","Le cambié el café en octubre. Ni cuenta se ha dado."],
+["canva","FE_PassStuffingSkipBeans","Pass the stuffing. Skip the beans.","FE","추수감사절 식탁, 원두 0","Pasa el relleno. Olvida los granos."],
+["canva","RB_EarlySunsetsZero","Early sunsets. Zero-caffeine cups.","RB","이른 일몰 + 카페인 0","Atardece temprano. Tu taza, con cero cafeína."],
+["canva","FE_RedGinsengForTheRoad","Red ginseng for the road.","FE","연휴 이동 + 홍삼","Ginseng rojo para el camino."],
+["canva","FE_28InBeansOut","28+ in. Beans out.","FE","성분 묶음, 숫자 하나","28+ adentro. Granos, fuera."],
+["canva","FE_MadeInKoreaForMornings","Made in Korea. Made for mornings.","FE","한국산 + 아침","Hecho en Corea. Para tus mañanas."],
+["canva","RB_SecondCupAfterPie","Second cup after pie? Zero caffeine.","RB","추수감사절 디저트 후 + 카페인 0","Otra taza después del pay. Cero cafeína."],
+["canva","FE_BeanlessForTheHolidays","Beanless for the holidays.","FE","연말 시즌, 원두 0","Sin granos estas fiestas."],
+["canva","FE_167EvenInDecember","$1.67 a cup, about. Even in December.","FE","한 잔 가격 vs 홀리데이 메뉴 시즌","$1.67 la taza, aprox. Hasta en diciembre."],
+["canva","FERB_MorningAfter3","Morning cup. After-3 cup. Both beanless.","FE+RB","두 제품 아침·오후 3시 이후","Taza de la mañana. Taza después de las 3. Las dos, sin granos."],
+["local","FE_OverTheRiverNoBeans","Over the river, through the woods, no beans.","FE","추수감사절 귀성(자동차 이동) 지도","Rumbo a casa de la abuela, sin granos."],
+["local","FE_ReservedBeanlessCup","Reserved: the beanless cup.","FE","추수감사절 식탁 자리 카드","Reservado: la taza sin granos."],
+["local","RB_AfterDinnerRecipe","After-dinner recipe: zero caffeine.","RB","레시피 카드, 저녁 카페인 0","Receta de sobremesa: cero cafeína."],
+["local","FE_ExtraHisCoffeeNoBeans","EXTRA! His coffee has no beans.","FE","신문 1면, 그의 커피를 바꿔라","¡EXTRA! Su café no tiene granos."],
+["local","FE_UnitPrice167","Unit price: about $1.67 a cup.","FE","마트 가격표, 한 잔 가격","Precio por taza: como $1.67."],
+["local","FE_FiveBottleShelfClosed","The five-bottle shelf: closed.","FE","가게 간판, 성분 묶음","La repisa de cinco frascos: cerrada."],
+["local","RB_ThursdayPieZero","Thursday: pie. After: zero caffeine.","RB","11월 달력(추수감사절 11/26) + 카페인 0","Jueves: pay. Después: cero cafeína."],
+["local","FE_RedGinsengKoreanHabit","Red ginseng: a Korean morning habit.","FE","목판화풍 한옥 + 홍삼","Ginseng rojo: una costumbre coreana."],
+["local","FE_CoffeeLoverHasEverything","For the coffee lover who has everything.","FE","연말 선물 태그","Para quien ama el café y ya lo tiene todo."],
+["local","RB_CareInstructions7PM","Care instructions for 7 PM.","RB","옷 케어 라벨, 저녁 카페인 0","Instrucciones de uso para las 7 PM."],
+["higgsfield","FE_HeMadeTheGravy","He made the gravy. I made his coffee.","FE","그의 커피를 바꿔라 + 추수감사절 준비","Él hizo la salsa. Yo le hice el café."],
+["higgsfield","FE_FiveHourDriveOnePacket","Five-hour drive. One packet.","FE","추수감사절 자동차 이동","Cinco horas de camino. Un sobre."],
+["higgsfield","FE_CafecitoWholeTable","Cafecito for the whole table. No beans.","FE","히스패닉 가족 + 홍삼","Cafecito para toda la mesa. Sin granos."],
+["higgsfield","RB_FivePMAlreadyDark","5 PM and already dark. Cup: zero caffeine.","RB","이른 일몰 + 카페인 0","Las 5 PM y ya oscureció. Taza: cero cafeína."],
+["higgsfield","FE_SeoulTraditionTuesday","A Seoul tradition. Your Tuesday.","FE","한국 전통 + 일상","Una tradición de Seúl. Tu martes."],
+["higgsfield","FE_EveryoneFoamSkipBeans","Everyone's ordering foam. I'm skipping beans.","FE","홀리데이 콜드폼 메뉴 시즌, 아이스","Todos piden espuma. Yo, sin granos."],
+["higgsfield","FE_LunchBreakMath","Lunch-break math: about $1.67 a cup.","FE","한 잔 가격","Cuentas del almuerzo: como $1.67 la taza."],
+["higgsfield","RB_AbuelosSecondCup","Abuelo's second cup? Zero caffeine.","RB","히스패닉 가족 저녁 + 카페인 0","La segunda taza del abuelo: cero cafeína."],
+["higgsfield","FE_TradedFiveBottles","He traded five bottles for one packet.","FE","성분 묶음","Cambió cinco frascos por un sobre."],
+["higgsfield","RB_WrappingGiftsAt8","Wrapping gifts at 8. Zero caffeine.","RB","연말 선물 포장 저녁 + 카페인 0","Envolviendo regalos a las 8. Cero cafeína."]];
 let dt="all",dl="en";const dg=document.getElementById("dgrid"),dtg=document.getElementById("dtog");
 function ddraw(){dtg.innerHTML=[["all","전체 "+D.length],...Object.keys(T).filter(k=>D.some(d=>d[0]===k)).map(k=>[k,T[k].split(" · ")[0]+" "+D.filter(d=>d[0]===k).length])].map(b=>`<button data-k="${b[0]}" aria-pressed="${dt===b[0]}">${b[1]}</button>`).join("");
 dtg.querySelectorAll("button").forEach(b=>b.onclick=()=>{dt=b.dataset.k;ddraw()});
 const sx=dl==="es"?"-es":"";document.getElementById("den").setAttribute("aria-pressed",dl==="en");document.getElementById("des").setAttribute("aria-pressed",dl==="es");
-dg.innerHTML=D.filter(d=>dt==="all"||d[0]===dt).map(d=>{const h=dl==="es"?d[5]:d[2];return `<article class="cr"><a href="img/daily/2026-11-13/${d[0]}-${d[1]}${sx}.jpg" target="_blank" rel="noopener"><img src="img/daily/2026-11-13/${d[0]}-${d[1]}${sx}.jpg" onerror="this.onerror=null;this.src=this.src.replace('-es.jpg','.jpg')" alt="${h} 소재" loading="lazy"></a><h3>${h} <span class="tag${d[3]==="FE"?"":" w"}">${d[3]}</span></h3><dl><div><dt>툴 · 방향</dt><dd>${T[d[0]]}</dd></div><div><dt>소구점 · 근거</dt><dd>${d[4]}</dd></div></dl></article>`}).join("")}
+dg.innerHTML=D.filter(d=>dt==="all"||d[0]===dt).map(d=>{const h=dl==="es"?d[5]:d[2];return `<article class="cr"><a href="img/daily/2026-11-16/${d[0]}-${d[1]}${sx}.jpg" target="_blank" rel="noopener"><img src="img/daily/2026-11-16/${d[0]}-${d[1]}${sx}.jpg" onerror="this.onerror=null;this.src=this.src.replace('-es.jpg','.jpg')" alt="${h} 소재" loading="lazy"></a><h3>${h} <span class="tag${d[3]==="FE"?"":" w"}">${d[3]}</span></h3><dl><div><dt>툴 · 방향</dt><dd>${T[d[0]]}</dd></div><div><dt>소구점 · 근거</dt><dd>${d[4]}</dd></div></dl></article>`}).join("")}
 document.getElementById("den").onclick=()=>{dl="en";ddraw()};document.getElementById("des").onclick=()=>{dl="es";ddraw()};
 ddraw();
 // 아이디어 보드: 구글 시트(Apps Script 웹 앱)에 저장하고 읽어 온다. 주소가 비어 있으면 안내만 보인다.
