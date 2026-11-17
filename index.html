@@ -351,7 +351,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
 
 <section id="next">
   <h2>다음 주에 집행할 소재 10테마</h2>
-  <p class="lead">E = 지난주 효율 상위 테마 확장 · N = 이번 주 시즌 테스트 · 영어·스페인어 각 1장 · 11/17 매일 소재에서 골랐습니다</p>
+  <p class="lead">E = 지난주 효율 상위 테마 확장 · N = 이번 주 시즌 테스트 · 영어·스페인어 각 1장 · 영문 제목은 Title Case · E1~E5는 11/17 라이브</p>
   <div class="tog"><button id="en" aria-pressed="true">English</button><button id="es" aria-pressed="false">Español</button></div>
   <div class="grid" id="grid"></div>
 </section>
@@ -405,16 +405,16 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
 <script>
 const DD="w47/";
 const C=[
-[DD+"figma-FE_SameThermosNoBeans","E1 · 의식은 그대로, 원두만 빼기","확장","늘 쓰던 보온병·머그·시간은 그대로 두고 안에 든 것만 바꾼다는 장면.","반응 1~3위 V80 (클릭률 14.0~18.4%). 구매는 11/18 이후 확정","Same thermos. No beans inside.","El mismo termo. Sin granos adentro."],
-[DD+"figma-FE_RedRootLongStory","E2 · 성분을 한 장씩","확장","향수 광고처럼 원물 하나를 크게. 홍삼 한 뿌리와 한국산 표기.","V55-PerfumeCarousel_FE (구매 1건당 99,373원, 규정 통과 1위)","A red root with a long story.","Una raíz roja con mucha historia."],
-[DD+"figma-RB_FireOnCaffeineOff","E3 · 저녁 한 잔, 카페인 0","확장","겨울 저녁의 따뜻한 한 잔. Recovery 0 mg, \"Not a sleep aid\" 표기.","RecVisA_4 (구매 6건, 건수 1위)","Fire on. Caffeine off.","Chimenea encendida. Cafeína apagada."],
-[DD+"local-FE_FridgeNoteHisCoffee","E4 · 그의 커피를 바꿔라","확장","냉장고 메모 한 장. 그가 눈치채지 못한 채 또 찾는다는 농담.","lover_2 (구매 2건, 1건당 162,720원). 성적 암시 문구는 뺌","Bought more of your coffee. Love you.","Te compré más de tu café. Te quiero."],
-[DD+"local-FE_YardSaleFiveBottles","E5 · 병 다섯 개 대신 패킷 하나","확장","영양제 병을 정리하고 패킷 하나만 남긴다는 선반·차고 세일 장면.","D1112-BeforeNowShelf (매일 소재 중 첫 구매, 메인 승격)","Yard sale: five bottles. Kept: one packet.","Venta de garage: cinco frascos. Me quedé con un sobre."],
-[DD+"figma-FE_TableForTwelve","N1 · 추수감사절 식탁","신규","손님 열두 명에게 패킷 하나씩. 연휴 주간 한정.","11/26 추수감사절","Table for twelve. Packets for all.","Mesa para doce. Sobres para todos."],
-[DD+"higgsfield-FE_DriveHomeCupPoured","N2 · 연휴 귀갓길","신규","긴 운전 끝에 집에 오면 이미 따라 둔 한 잔.","연휴 이동 주간 + 그의 커피 테마","Drive home. His cup's already poured.","De regreso a casa. Su taza ya está servida."],
-[DD+"figma-FE_MadeAtHome167","N3 · 집에서 한 잔 약 $1.67","신규","가격. 카페 대신 집에서, 정가 기준 한 잔 값.","블랙프라이데이 주간의 가격 관심. 할인 숫자는 미정이라 정가만","Made at home. About $1.67 a cup.","Hecho en casa. Como $1.67 la taza."],
-[DD+"canva-FE_ThanksgivingCafecito","N4 · Thanksgiving cafecito","신규","히스패닉 가족 식탁의 cafecito를 연휴에 맞춰.","V80-E1_Sobremesa (스페인어 반응 1위 13.98%)","Thanksgiving cafecito. No beans.","Cafecito de Thanksgiving. Sin granos."],
-[DD+"figma-FE_KoreanWinterMorning","N5 · 한국의 겨울 아침","신규","한옥 대신 계절로 푼 한국 이야기. 홍삼과 겨울 아침.","한옥 소재가 이번 주 구매 0 → 같은 한국 테마를 다른 장면으로","A Korean winter morning, in one packet.","Una mañana de invierno en Corea, en un sobre."]];
+[DD+"FE_SameMorningNoBeans","E1 · 의식은 그대로, 원두만 빼기","확장 · 라이브","아침 주방과 늘 쓰던 머그는 그대로, 안에 든 것만 바꾼다는 장면.","반응 1~3위 V80 (클릭률 14.0~18.4%)","Same Morning. No Beans.","La misma mañana. Sin granos."],
+[DD+"FE_TopNoteRedGinseng","E2 · 성분을 향수처럼","확장 · 라이브","향수 광고의 \"노트\" 형식으로 홍삼 한 가지를 크게.","V55 향수풍 캐러셀 (구매 1건당 99,373원, 규정 통과 1위)","Top Note: Korean Red Ginseng.","Nota de salida: ginseng rojo coreano."],
+[DD+"RB_EveningCupZero","E3 · 저녁 한 잔, 카페인 0","확장 · 라이브","책과 스탠드 옆의 따뜻한 한 잔. Recovery 0 mg, \"Not a sleep aid.\" 표기.","RecVisA_4 (구매 6건, 건수 1위)","Evening Cup. Zero Caffeine.","Taza de la noche. Cero cafeína."],
+[DD+"FE_HeThinksHisUsual","E4 · 그의 커피를 바꿔라","확장 · 라이브","아침 식탁의 머그 두 잔. 그는 늘 마시던 것인 줄 안다.","lover_2 (구매 2건, 1건당 162,720원). 성적 암시 문구는 뺌","He Thinks It's His Usual.","Él cree que es el de siempre."],
+[DD+"FE_FiveBottlesOut","E5 · 병 다섯 개 대신 패킷 하나","확장 · 라이브","영양제 병 다섯 개는 상자에, 선반에는 파우치 하나.","D1112-BeforeNowShelf (매일 소재 중 첫 구매)","Five Bottles Out. One Packet In.","Salen cinco frascos. Entra un sobre."],
+[DD+"FE_PieOnTheTable","N1 · 추수감사절 디저트 식탁","신규","파이 옆에 손님 수만큼 한 잔씩.","11/26 추수감사절","Pie on the Table. Packets for Everyone.","Pay en la mesa. Sobres para todos."],
+[DD+"FE_LongDriveHome","N2 · 연휴 귀갓길","신규","트렁크 짐 사이에 패킷 하나.","연휴 이동 주간","Long Drive Home. One Packet in the Bag.","Largo camino a casa. Un sobre en la bolsa."],
+[DD+"FE_About167MadeAtHome","N3 · 집에서 한 잔 약 $1.67","신규","정가 기준 한 잔 값을 동전·지폐 옆에.","블랙프라이데이 주간의 가격 관심. 할인 숫자는 미정이라 정가만","About $1.67 a Cup. Made at Home.","Como $1.67 la taza. Hecho en casa."],
+[DD+"FE_CafecitoWholeTable","N4 · 온 식탁의 cafecito","신규","식사 뒤 가족 식탁, 콘차와 작은 잔 다섯 개.","V80-E1_Sobremesa (스페인어 반응 1위 13.98%)","Cafecito for the Whole Table.","Cafecito para toda la mesa."],
+[DD+"FE_WinterInKorea","N5 · 한국의 겨울","신규","눈 내린 한옥 마루의 찻상. 한옥 테마를 계절로 바꿈.","한옥 소재가 이번 주 구매 0 → 같은 한국 테마를 다른 장면으로","Winter in Korea. Red Ginseng in the Cup.","Invierno en Corea. Ginseng rojo en la taza."]];
 let lang="en";const g=document.getElementById("grid");
 function draw(){g.innerHTML=C.map(c=>`<article class="cr"><img src="img/${c[0]}${lang==="es"?"-es":""}.jpg" alt="${c[1]} 소재" loading="lazy"><h3>${c[1]} <span class="tag${c[2]==="신규"?" w":""}">${c[2]}</span></h3><dl><div><dt>소구점</dt><dd>${c[3]}</dd></div><div><dt>근거</dt><dd>${c[4]}</dd></div><div><dt>이미지 문구</dt><dd>${lang==="en"?c[5]:c[6]}</dd></div></dl></article>`).join("");
 document.getElementById("en").setAttribute("aria-pressed",lang==="en");document.getElementById("es").setAttribute("aria-pressed",lang==="es")}
