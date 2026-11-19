@@ -357,7 +357,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
 </section>
 
 <section id="daily">
-  <h2>매일 소재 · 2026-11-18 (40장 · 블랙프라이데이)</h2>
+  <h2>매일 소재 · 2026-11-19 (40장 · 블랙프라이데이)</h2>
   <p class="lead">매일 오전 10시 · 툴 4개 × 10장 · 4:5 · 카피는 승인 전 초안 · 이미지를 누르면 크게 봅니다</p>
   <div class="tog"><button id="den" aria-pressed="true">English</button><button id="des" aria-pressed="false">Español</button></div>
   <div class="tog" id="dtog" style="flex-wrap:wrap"></div>
@@ -422,51 +422,51 @@ document.getElementById("en").onclick=()=>{lang="en";draw()};document.getElement
 // 매일 소재: [툴, 파일, 이미지 문구, 제품, 소구점·근거]
 const T={figma:"피그마 · 실사 정물 + 세리프",canva:"캔바 · 타이포 포스터",local:"PC 프로그램 · 레트로 인쇄물",higgsfield:"힉스필드 · 인물 라이프스타일"};
 const D=[
-["figma","BF_StockTheShelf","Stock the Shelf at $34.99.","FE+RB","블프 쟁여 두기(팬트리 선반) + 가격","Llena la alacena a $34.99."],
-["figma","BF_RedRootCup","The Red Root Cup, 30% Off.","FE","한국 홍삼 원물(구매 상위 테마) + 블프 30%","La taza de raíz roja, 30% menos."],
-["figma","BF_KoreanGinsengBFPrice","Korean Red Ginseng. Black Friday Price.","FE","겨울 한옥(구매 상위 테마) + 한 잔 약 $1.17","Ginseng rojo coreano. Precio de Black Friday."],
-["figma","BF_OnePouch30Mornings","One Pouch. 30 Mornings. $34.99.","FE","파우치 1개 = 30잔, 블프 가격","Una bolsa. 30 mañanas. $34.99."],
-["figma","BF_AfterDinnerZero","After Dinner, 0 mg. Now 30% Off.","RB","저녁 한 잔(Recovery 카페인 0) + 블프","Después de la cena, 0 mg. Ahora 30% menos."],
-["figma","BF_PieThursday","Pie on Thursday. 30% Off Through Nov 30.","FE+RB","추수감사절(11/26) 디저트 식탁 + 행사 기간","Pay el jueves. 30% menos hasta el 30 de nov."],
-["figma","BF_WrapOneKeepOne","Wrap One. Keep One.","FE+RB","연말 선물 + 쟁여 두기","Una para regalar. Otra para ti."],
-["figma","BF_ColdMorningsWarmerPrice","Cold Mornings. Warmer Price.","FE","겨울 아침 + 블프 가격","Mañanas frías. Mejor precio."],
-["figma","BF_BananaCreamerIsComing","Banana Creamer Is Coming.","BC","바나나 크리머 티저(가격·날짜 없음) + 블프에 SANS 쟁여 두기","Banana Creamer viene en camino."],
-["figma","BF_28IngredientsOnePrice","28+ Ingredients. One Black Friday Price.","FE+RB","성분 묶음(구매 상위 테마) + 블프","28+ ingredientes. Un precio de Black Friday."],
-["canva","BF_TwelveDays30Off","Twelve Days. 30% Off.","FE+RB","Amazon 블프 주간 11/19~30(12일) 트렌드","Doce días. 30% menos."],
-["canva","BF_FirstOnTheList","First on the List: Coffee Without Beans.","FE","연말 쇼핑 리스트, 원두 없음","Primero en la lista: café sin granos."],
-["canva","BF_YourCup117","Your Cup, About $1.17.","FE","한 잔 가격(구매 상위 테마) 블프판","Tu taza, como $1.17."],
-["canva","BF_HisUsualCup30Off","His Usual Cup, 30% Off.","FE","그의 커피를 바꿔라 + 블프","Su taza de siempre, 30% menos."],
-["canva","BF_ZeroBeans30Off","Zero Beans. 30% Off.","FE+RB","원두 없음 한 줄 + 블프","Cero granos. 30% menos."],
-["canva","BF_3PMCup30Off","Your 3 PM Cup, 30% Off.","RB","오후 3시 이후 카페인 0 + 블프","Tu taza de las 3 PM, 30% menos."],
-["canva","BF_BananaStockUpSANSFirst","Banana Creamer: Coming Soon. Stock Up on SANS First.","BC","바나나 크리머 티저 + SANS 먼저","Banana Creamer: próximamente. Abastécete de SANS primero."],
-["canva","BF_28Ingredients30Off","28+ Ingredients, 30% Off.","FE","성분 묶음 + 블프","28+ ingredientes, 30% menos."],
-["canva","BF_CafecitoSeason30Off","Cafecito Season, 30% Off.","FE+RB","히스패닉 가족 cafecito + 블프","Temporada de cafecito, 30% menos."],
-["canva","BF_SomethingBananaComing","Something Banana Is Coming. Get Your SANS Ready.","BC","바나나 크리머 티저(호기심형)","Algo de banana viene en camino. Ten listo tu SANS."],
-["local","BF_ReceiptSays3499","The Receipt Says $34.99.","FE","영수증 소품, 정가→블프가","El recibo dice $34.99."],
-["local","BF_CircleNov19to30","Circle Nov 19–30.","FE+RB","달력, 행사 기간 표시","Marca del 19 al 30 de nov."],
-["local","BF_AddItToTheList","Add It to the List.","FE","추수감사절 장보기 메모","Agrégalo a la lista."],
-["local","BF_LateDinnerZero","Late Dinner. Zero Caffeine. 30% Off.","RB","저녁 한 잔(카페인 0) 레트로 포스터","Cena tarde. Cero cafeína. 30% menos."],
-["local","BF_About117For12Days","About $1.17 a Cup, for 12 Days.","FE+RB","우표, 한 잔 가격 블프판","Como $1.17 la taza, por 12 días."],
-["local","BF_NoLinesNoParkingLot","No Lines. No Parking Lot. 30% Off.","FE+RB","매장 줄서기 대신 온라인 블프","Sin filas. Sin estacionamiento. 30% menos."],
-["local","BF_BoughtThreeHidTwo","Bought Three. Hid Two.","FE","냉장고 메모, 쟁여 두기","Compré tres. Escondí dos."],
-["local","BF_BananaCreamerComingSoon","Banana Creamer. Coming Soon.","BC","바나나 크리머 티저 레트로 포스터","Banana Creamer. Próximamente."],
-["local","BF_TodaysSpecialRedGinseng","Today's Special: Korean Red Ginseng Herbal Coffee.","FE","찻집 메뉴판 + 홍삼 + 블프가","Especial del día: ginseng rojo coreano en café herbal."],
-["local","BF_NowBoarding3499","Now Boarding: $34.99. Departing Dec 1.","FE+RB","출발 안내판, 12/1 정가 복귀","Abordando: $34.99. Sale el 1 de dic."],
-["higgsfield","BF_BlackFridayFromTheCouch","Black Friday From the Couch.","FE+RB","집에서 하는 온라인 블프 쇼핑","Black Friday desde el sofá."],
-["higgsfield","BF_CafecitoWholeFamily","Cafecito for the Whole Family, 30% Off.","FE+RB","히스패닉 가족 cafecito + 블프","Cafecito para toda la familia, 30% menos."],
-["higgsfield","BF_HisCoffeeOnSale","His Coffee Is on Sale. He Doesn't Know.","FE","그의 커피를 바꿔라 + 블프","Su café está en oferta. Él no lo sabe."],
-["higgsfield","BF_GameNightZero","Game Night Cup: 0 mg Caffeine, 30% Off.","RB","풋볼 저녁 + 카페인 0","Taza para la noche del partido: 0 mg de cafeína, 30% menos."],
-["higgsfield","BF_MorningMug117","Morning Mug, About $1.17 a Cup.","FE","아침 한 잔 + 한 잔 가격","Taza de la mañana, como $1.17 la taza."],
-["higgsfield","BF_StockedUpBeforeDec1","Stocked Up Before Dec 1.","FE+RB","팬트리 쟁여 두기","Ya me abastecí antes del 1 de dic."],
-["higgsfield","BF_BananaCreamerGetSANSFirst","Banana Creamer Is Coming. Get Your SANS First.","BC","바나나 크리머 티저 + 아침 식탁","Banana Creamer viene pronto. Ten tu SANS primero."],
-["higgsfield","BF_ColdWalkHotCup","Cold Walk, Hot Cup, 30% Off.","FE","겨울 산책 + 블프","Paseo frío, taza caliente, 30% menos."],
-["higgsfield","BF_FromKoreaBFPrice","From Korea, at a Black Friday Price.","FE","한옥 카페 + 홍삼(구매 상위 테마)","Desde Corea, a precio de Black Friday."],
-["higgsfield","BF_GiftThatLasts30Mornings","The Gift That Lasts 30 Mornings.","FE","연말 선물 + 30잔","El regalo que dura 30 mañanas."]];
+["figma","BF_FirstCupOfTheSale","First Cup of the Sale.","FE","Amazon 블프 주간 시작(11/19) + 아침 한 잔","La primera taza de la oferta."],
+["figma","BF_RedGinsengWinterMornings","Red Ginseng for Winter Mornings. 30% Off.","FE","한국 홍삼 원물(구매 상위 테마) + 겨울","Ginseng rojo para mañanas de invierno. 30% menos."],
+["figma","BF_FromSeoul3499","From Seoul, $34.99.","FE","서울 야경(구매 상위 테마) + 블프가","Desde Seúl, $34.99."],
+["figma","BF_SetOutAfterThePie","Set Out After the Pie.","RB","추수감사절 저녁(카페인 0) + 블프","Para servir después del pay."],
+["figma","BF_TwoPouchesOneCart","Two Pouches. One Cart. 30% Off.","FE+RB","아침·저녁 두 제품 장바구니 묶음","Dos bolsas. Un carrito. 30% menos."],
+["figma","BF_HerbsRootsMushrooms","Herbs, Roots, Mushrooms. No Coffee Beans.","FE+RB","성분 묶음(구매 상위 테마) + 한 잔 약 $1.17","Hierbas, raíces, hongos. Sin granos de café."],
+["figma","BF_UnderTheTree3499","Under the Tree, $34.99.","FE","연말 선물 + 블프가","Bajo el árbol, $34.99."],
+["figma","BF_The8PMCup30Off","The 8 PM Cup Is 30% Off.","RB","저녁 한 잔(카페인 0) + 블프","La taza de las 8 PM, 30% menos."],
+["figma","BF_BananaCreamerForYourCup","A Banana Creamer for Your SANS Cup.","BC","바나나 크리머 티저(가격·날짜 없음) + 블프에 SANS 쟁여 두기","Un Banana Creamer para tu taza de SANS."],
+["figma","BF_HanokMorningBFPrice","Hanok Morning, Black Friday Price.","FE","겨울 한옥(구매 상위 테마) + 블프가","Mañana en hanok, precio de Black Friday."],
+["canva","BF_TheSaleIsOn","The Sale Is On. 30% Off.","FE+RB","Amazon 블프 주간 11/19 시작 트렌드","La oferta ya empezó. 30% menos."],
+["canva","BF_PrimeMembers30Off","Prime Members: 30% Off Herbal Coffee.","FE+RB","Prime 회원가 $49.99 → $34.99","Miembros Prime: 30% menos en café herbal."],
+["canva","BF_SameMorningSmallerPrice","Same Morning. Smaller Price.","FE","아침 루틴 그대로, 가격만 할인","La misma mañana. Menor precio."],
+["canva","BF_GinsengInBeansOut","Red Ginseng In. Coffee Beans Out. 30% Off.","FE","홍삼 + 원두 없음 대비형","Ginseng rojo, sí. Granos de café, no. 30% menos."],
+["canva","BF_ZeroTonight30Today","0 mg Tonight. 30% Off Today.","RB","저녁 한 잔(카페인 0) + 블프","0 mg esta noche. 30% menos hoy."],
+["canva","BF_From4999To3499","From $49.99 to $34.99.","FE","가격 대비 한 줄(구매 상위 가격 테마)","De $49.99 a $34.99."],
+["canva","BF_ThanksgivingMorningSorted","Thanksgiving Morning, Sorted.","FE+RB","추수감사절(11/26) 아침 준비","La mañana de Thanksgiving, resuelta."],
+["canva","BF_BananaAlmostHere","Banana Creamer Is Almost Here.","BC","바나나 크리머 티저 + SANS 먼저","Banana Creamer ya casi llega."],
+["canva","BF_GuestsStayingOver","Guests Staying Over? Stock the Cups.","FE+RB","연휴 손님맞이 쟁여 두기","Visitas en casa: tazas para todos."],
+["canva","BF_MorningsEveningsBoth30","One for Mornings. One for Evenings. Both 30% Off.","FE+RB","아침 FE·저녁 RB 두 제품 블프","Una para la mañana. Otra para la noche. Las dos, 30% menos."],
+["local","BF_PriceOnTheTag","$34.99 on the Tag.","FE","가격표 소품, 정가→블프가","$34.99 en la etiqueta."],
+["local","BF_TwelveDaysThenBack","12 Days. Then It's Back to $49.99.","FE+RB","행사 12일 카운트다운, 12/1 정가 복귀","12 días. Luego vuelve a $49.99."],
+["local","BF_AdmitOneMorningCup","Admit One: Morning Cup, 30% Off.","FE","입장권 소품 + 블프가","Pase para uno: taza de la mañana, 30% menos."],
+["local","BF_MoonriseCupZero","Moonrise Cup. Zero Caffeine. 30% Off.","RB","달밤 레트로 포스터(카페인 0)","Taza de luna. Cero cafeína. 30% menos."],
+["local","BF_RedGinsengSaleEdition","Korean Red Ginseng, Sale Edition.","FE","빈티지 식물 라벨 + 홍삼(구매 상위 테마)","Ginseng rojo coreano, edición oferta."],
+["local","BF_BananaCreamerPostcard","Greetings From Banana Creamer. Arriving Soon.","BC","바나나 크리머 티저 엽서","Saludos de Banana Creamer. Llega pronto."],
+["local","BF_BlackFridayMath","The Black Friday Math.","FE","칠판 계산 $34.99 ÷ 30 ≈ $1.17","La cuenta de Black Friday."],
+["local","BF_SeatAtTheTable","A Seat at the Table for Herbal Coffee.","FE+RB","추수감사절 자리 카드","Un lugar en la mesa para el café herbal."],
+["local","BF_SweaterWeatherSale","Sweater Weather. Sale Weather.","FE","니트 패턴 겨울 시즌","Clima de suéter. Clima de ofertas."],
+["local","BF_StampedNoBeans","Stamped: No Coffee Beans.","FE+RB","고무 도장, 원두 없음 + 30%","Sellado: sin granos de café."],
+["higgsfield","BF_CoffeeOnSaleHerbalKind","Coffee Is on Sale. The Herbal Kind.","FE","블프 쇼핑 중인 아침","El café está en oferta. El herbal."],
+["higgsfield","BF_GrandmaKnewRedGinseng","Grandma Knew Red Ginseng. Now It's 30% Off.","FE","한국 할머니·홍삼 유산(구매 상위 테마)","La abuela ya conocía el ginseng rojo. Ahora, 30% menos."],
+["higgsfield","BF_SwitchHisMugThanksgiving","Switch His Mug Before Thanksgiving.","FE","그의 커피를 바꿔라 + 추수감사절","Cámbiale la taza antes de Thanksgiving."],
+["higgsfield","BF_LateShiftZero","Late Shift. 0 mg Caffeine. 30% Off.","RB","야간 근무 후 한 잔(카페인 0)","Turno de noche. 0 mg de cafeína. 30% menos."],
+["higgsfield","BF_StockingUpHolidays","Stocking Up for the Holidays.","FE+RB","팬트리 쟁여 두기","Abasteciéndome para las fiestas."],
+["higgsfield","BF_FriendsgivingRound","Friendsgiving, Herbal Coffee Round.","FE+RB","Friendsgiving 시즌","Friendsgiving, una ronda de café herbal."],
+["higgsfield","BF_BananaCreamerSANSFirst","Banana Creamer Is Coming. SANS Goes First.","BC","바나나 크리머 티저 + 아침 식탁","Banana Creamer viene pronto. SANS va primero."],
+["higgsfield","BF_The9AMCup30Off","The 9 AM Cup, 30% Off.","FE","아침 한 잔 + 블프","La taza de las 9 AM, 30% menos."],
+["higgsfield","BF_SeoulMorningWalk","Seoul Morning Walk, Black Friday Price.","FE","서울 북촌 겨울(구매 상위 테마)","Paseo matutino en Seúl, precio de Black Friday."],
+["higgsfield","BF_TwoCupsTwoPouches","Two Cups. Two Pouches. 30% Off.","FE+RB","커플 아침·저녁 두 제품","Dos tazas. Dos bolsas. 30% menos."]];
 let dt="all",dl="en";const dg=document.getElementById("dgrid"),dtg=document.getElementById("dtog");
 function ddraw(){dtg.innerHTML=[["all","전체 "+D.length],...Object.keys(T).filter(k=>D.some(d=>d[0]===k)).map(k=>[k,T[k].split(" · ")[0]+" "+D.filter(d=>d[0]===k).length])].map(b=>`<button data-k="${b[0]}" aria-pressed="${dt===b[0]}">${b[1]}</button>`).join("");
 dtg.querySelectorAll("button").forEach(b=>b.onclick=()=>{dt=b.dataset.k;ddraw()});
 const sx=dl==="es"?"-es":"";document.getElementById("den").setAttribute("aria-pressed",dl==="en");document.getElementById("des").setAttribute("aria-pressed",dl==="es");
-dg.innerHTML=D.filter(d=>dt==="all"||d[0]===dt).map(d=>{const h=dl==="es"?d[5]:d[2];return `<article class="cr"><a href="img/daily/2026-11-18/${d[0]}-${d[1]}${sx}.jpg" target="_blank" rel="noopener"><img src="img/daily/2026-11-18/${d[0]}-${d[1]}${sx}.jpg" onerror="this.onerror=null;this.src=this.src.replace('-es.jpg','.jpg')" alt="${h} 소재" loading="lazy"></a><h3>${h} <span class="tag${d[3]==="FE"?"":" w"}">${d[3]}</span></h3><dl><div><dt>툴 · 방향</dt><dd>${T[d[0]]}</dd></div><div><dt>소구점 · 근거</dt><dd>${d[4]}</dd></div></dl></article>`}).join("")}
+dg.innerHTML=D.filter(d=>dt==="all"||d[0]===dt).map(d=>{const h=dl==="es"?d[5]:d[2];return `<article class="cr"><a href="img/daily/2026-11-19/${d[0]}-${d[1]}${sx}.jpg" target="_blank" rel="noopener"><img src="img/daily/2026-11-19/${d[0]}-${d[1]}${sx}.jpg" onerror="this.onerror=null;this.src=this.src.replace('-es.jpg','.jpg')" alt="${h} 소재" loading="lazy"></a><h3>${h} <span class="tag${d[3]==="FE"?"":" w"}">${d[3]}</span></h3><dl><div><dt>툴 · 방향</dt><dd>${T[d[0]]}</dd></div><div><dt>소구점 · 근거</dt><dd>${d[4]}</dd></div></dl></article>`}).join("")}
 document.getElementById("den").onclick=()=>{dl="en";ddraw()};document.getElementById("des").onclick=()=>{dl="es";ddraw()};
 ddraw();
 // 아이디어 보드: 구글 시트(Apps Script 웹 앱)에 저장하고 읽어 온다. 주소가 비어 있으면 안내만 보인다.
