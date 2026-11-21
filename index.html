@@ -357,7 +357,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
 </section>
 
 <section id="daily">
-  <h2>매일 소재 · 2026-11-20 (50장 · 블랙프라이데이 + 머쉬룸커피 비교)</h2>
+  <h2>매일 소재 · 2026-11-21 (40장 · 블랙프라이데이)</h2>
   <p class="lead">매일 오전 10시 · 툴 4개 × 10장 · 4:5 · 카피는 승인 전 초안 · 이미지를 누르면 크게 봅니다</p>
   <div class="tog"><button id="den" aria-pressed="true">English</button><button id="des" aria-pressed="false">Español</button></div>
   <div class="tog" id="dtog" style="flex-wrap:wrap"></div>
@@ -422,61 +422,51 @@ document.getElementById("en").onclick=()=>{lang="en";draw()};document.getElement
 // 매일 소재: [툴, 파일, 이미지 문구, 제품, 소구점·근거]
 const T={figma:"피그마 · 실사 정물 + 세리프",canva:"캔바 · 타이포 포스터",local:"PC 프로그램 · 레트로 인쇄물",higgsfield:"힉스필드 · 인물 라이프스타일",compare:"비교 세트 · 머쉬룸커피 대비(맛 먼저)"};
 const D=[
-["figma","BF_DontWaitForFriday","Don't Wait for Friday.","FE","조기 할인 트렌드(쇼핑 분산·얼리 딜) + 11/19 시작","No esperes al viernes."],
-["figma","BF_RedGinsengRootToCup","Red Ginseng, Root to Cup.","FE","한국 홍삼 원물(구매 상위 테마) + 블프","Ginseng rojo, de la raíz a la taza."],
-["figma","BF_SeoulLightsSalePrice","Seoul Lights, Sale Price.","FE","서울 야경(구매 상위 테마) + 블프가","Luces de Seúl, precio de oferta."],
-["figma","BF_OneWeekToThanksgiving","One Week to Thanksgiving.","RB","추수감사절(11/26) 일주일 전 + 저녁 카페인 0","Falta una semana para Thanksgiving."],
-["figma","BF_GrandmasTableNewCup","Grandma's Table, a New Cup.","FE+RB","그랜마코어(연말 향수 트렌드) + 두 제품","La mesa de la abuela, una taza nueva."],
-["figma","BF_PocketChangeFullCup","Pocket Change, Full Cup.","FE","가성비 소비(신중한 지출 트렌드) + 한 잔 약 $1.17","Monedas sueltas, taza llena."],
-["figma","BF_StockUpBeforeDec1","Stock Up Before Dec 1.","FE+RB","12/1 정가 복귀 전 쟁여 두기","Abastécete antes del 1 de dic."],
-["figma","BF_ColdNightZero","Cold Night, Zero Caffeine.","RB","겨울밤 저녁 한 잔(카페인 0)","Noche fría, cero cafeína."],
-["figma","BF_SaveASpotBanana","Save a Spot for Banana Creamer.","BC","바나나 크리머 티저(가격·날짜 없음) + SANS 먼저","Guarda un lugar para Banana Creamer."],
-["figma","BF_BukchonFirstSnow30","First Snow in Bukchon, 30% Off.","FE","북촌 첫눈(한옥 구매 상위 테마) + 블프","Primera nieve en Bukchon, 30% menos."],
-["canva","BF_BlackFridayCameEarly","Black Friday Came Early.","FE+RB","조기 할인 트렌드","Black Friday llegó temprano."],
-["canva","BF_SmartCart30","Smart Cart: Herbal Coffee, 30% Off.","FE+RB","가성비 장바구니 + 한 잔 약 $1.17","Carrito inteligente: café herbal con 30% menos."],
-["canva","BF_100mgNatural30","100 mg Natural Caffeine. 30% Off.","FE","카페인 100 mg 사실 + 블프","100 mg de cafeína natural. 30% menos."],
-["canva","BF_ThanksgivingNightZero","Thanksgiving Night, Zero Caffeine.","RB","추수감사절 밤(카페인 0)","Noche de Thanksgiving, cero cafeína."],
-["canva","BF_3499UntilNov30","$34.99 Until Nov 30.","FE","가격 대비 한 줄(구매 상위 가격 테마)","$34.99 hasta el 30 de nov."],
-["canva","BF_RedGinsengSeasonSale","Red Ginseng, Season Sale.","FE","홍삼 + 블프","Ginseng rojo en temporada de ofertas."],
-["canva","BF_BananaSoonSANSNow","Banana Creamer: Soon. SANS: Now.","BC","바나나 크리머 티저 + 지금은 SANS","Banana Creamer: pronto. SANS: ahora."],
-["canva","BF_HolidayHostKit","Holiday Host Kit: Herbal Coffee.","FE+RB","연휴 손님맞이","Kit del anfitrión: café herbal."],
-["canva","BF_NoBeansBigDeal","No Coffee Beans. Big Deal.","FE","원두 없음 + 블프","Sin granos de café. Gran oferta."],
-["canva","BF_ShopEarlySipEarly","Shop Early, Sip Early.","FE","조기 쇼핑 트렌드","Compra antes, disfruta antes."],
-["local","BF_ExtraHerbalCoffee","Extra! Herbal Coffee 30% Off.","FE","신문 호외 레트로 + 블프가","¡Extra! Café herbal con 30% menos."],
-["local","BF_ThanksgivingNov26","Thanksgiving Is Nov 26. Stock Up Now.","FE+RB","추수감사절 날짜 달력","Thanksgiving es el 26 de nov. Abastécete ya."],
-["local","BF_NoCouponToClip","No Coupon to Clip.","FE+RB","코드 없는 Prime 가격","No hay cupón que recortar."],
-["local","BF_OpenLateZero","Open Late: Zero Caffeine.","RB","네온 다이너 밤(카페인 0)","Abierto tarde: cero cafeína."],
-["local","BF_PostmarkedSeoul","Postmarked Seoul. Priced for Black Friday.","FE","서울 우표(구매 상위 테마) + 블프","Matasellos de Seúl. Precio de Black Friday."],
-["local","BF_BananaRipeningSoon","Banana Creamer. Ripening Soon.","BC","바나나 크리머 티저(과일 상자 라벨)","Banana Creamer. Madurando pronto."],
-["local","BF_MenuBoard3499","Menu Board: Herbal Coffee, $34.99.","FE","메뉴판 가격","Menú del día: café herbal, $34.99."],
-["local","BF_GrandmasRecipeCard","Grandma's Recipe: One Packet, 5–6 oz Water.","FE+RB","그랜마코어 레시피 카드 + 사용법","La receta de la abuela: un sobre, 5–6 oz de agua."],
-["local","BF_TempsDownPricesDown","Temps Down. Prices Down.","FE","겨울 기온 + 가격 인하","Baja la temperatura. Baja el precio."],
-["local","BF_FullyStockedNoBeans","Fully Stocked, No Coffee Beans.","FE+RB","팬트리 쟁여 두기","Bien abastecido, sin granos de café."],
-["higgsfield","BF_EarlyDealEarlyCup","Early Deal, Early Cup.","FE","조기 할인 + 아침 쇼핑","Oferta adelantada, taza temprana."],
-["higgsfield","BF_SwapHisCoffeeBF","Swap His Coffee This Black Friday.","FE","그의 커피를 바꿔라(구매 상위 테마)","Cámbiale el café este Black Friday."],
-["higgsfield","BF_HerGinsengHabit","Her Red Ginseng Habit, Now 30% Off.","FE","한국 할머니·홍삼 유산(구매 상위 테마)","Su costumbre de ginseng rojo, ahora 30% menos."],
-["higgsfield","BF_AfterTheDishesZero","After the Dishes, Zero Caffeine.","RB","추수감사절 설거지 후 저녁 한 잔","Después de los platos, cero cafeína."],
-["higgsfield","BF_PackedForTheDrive","Packed for the Drive Home.","FE+RB","추수감사절 귀성 여행","Listos para el viaje a casa."],
-["higgsfield","BF_SeoulWinterCup","Seoul Winter, Black Friday Cup.","FE","서울 익선동 겨울(구매 상위 테마)","Invierno en Seúl, taza de Black Friday."],
-["higgsfield","BF_BananaOnItsWay","Banana Creamer Is on Its Way.","BC","바나나 크리머 티저 + 키친","Banana Creamer viene en camino."],
-["higgsfield","BF_KnitClubCups","Knit Club Cups, 30% Off.","FE","그랜마코어 뜨개 모임","Tazas del club de tejido, 30% menos."],
-["higgsfield","BF_FinalsSeason30","Finals Season, 30% Off.","FE","기말고사 시즌","Temporada de exámenes, 30% menos."],
-["higgsfield","BF_SundayCafecitoSale","Sunday Cafecito, Sale Price.","FE+RB","히스패닉 가족 카페시토","Cafecito de domingo, precio de oferta."],
-["compare","BF_MushroomTastedLikeDirt","Mushroom Coffee Tasted Like Dirt? Try the One That Doesn't.","FE","머쉬룸커피 비교(사용자 지시 11/20): 맛 불만 → 맛부터","¿El café de hongos te supo a tierra? Prueba uno que no."],
-["compare","BF_WeFixedTheTasteFirst","We Fixed the Taste First.","FE","머쉬룸커피 비교: 맛 먼저, 그다음 28+ 성분","Primero arreglamos el sabor."],
-["compare","BF_DrinkItLikeCoffee","Drink It Like Coffee. Every Day.","FE","머쉬룸커피 비교: 매일 커피처럼","Tómalo como café. Todos los días."],
-["compare","BF_NotAnotherEarthyCup","Not Another Earthy Cup.","FE","머쉬룸커피 비교: 흙맛 아님","No es otra taza con sabor a tierra."],
-["compare","BF_EveningCupNoDirt","An Evening Cup That Doesn't Taste Like Dirt.","RB","머쉬룸커피 비교: 저녁 한 잔(카페인 0)","Una taza de noche que no sabe a tierra."],
-["compare","BF_GaveUpOnMushroomCoffee","Gave Up on Mushroom Coffee? Give This a Sip.","FE","머쉬룸커피 비교: 포기한 사람 재도전","¿Te rendiste con el café de hongos? Dale un sorbo a este."],
-["compare","BF_TasteFirstEverythingElse","Taste First. Then Everything Else.","FE","머쉬룸커피 비교: 맛 → 성분 → 홍삼 → 카페인","Primero el sabor. Luego todo lo demás."],
-["compare","BF_SwitchingFromMushroom","Switching From Mushroom Coffee? Start Here.","FE+RB","머쉬룸커피 비교: 갈아타기","¿Dejas el café de hongos? Empieza aquí."],
-["compare","BF_DailyCupNotAChore","Your Daily Cup, Not a Chore.","FE","머쉬룸커피 비교: 참고 마시는 것 vs 즐기는 것","Tu taza diaria, no una tarea."],
-["compare","BF_KeepTheHabitChangeTheCup","Keep the Coffee Habit. Change the Cup.","FE+RB","머쉬룸커피 비교: 커피 습관 유지","Mantén la costumbre del café. Cambia la taza."]];
+["figma","BF_CupYouPutOff","The Cup You Put Off Trying.","FE","미뤄 둔 구매(ICSC: 72%가 가격 때문에 미룬 물건을 이번 주말에 산다)","La taza que dejaste para después."],
+["figma","BF_HanokHolidayPrice","Hanok Light, Holiday Price.","FE","한옥(구매 상위 테마) + 블프가","Luz de hanok, precio de fiesta."],
+["figma","BF_ThursdayNightZero","Thursday Night, Zero Caffeine.","RB","추수감사절 목요일 밤 + 카페인 0","Jueves de noche, cero cafeína."],
+["figma","BF_CompareEveryPrice","Compare Every Price. Then This One.","FE","가격 비교 쇼핑(MRI-Simmons: 85%가 최저가 비교) + 한 잔 $1.17","Compara precios. Luego mira este."],
+["figma","BF_SetTableStockShelf","Set the Table, Stock the Shelf.","FE+RB","추수감사절 준비 + 두 제품 쟁이기","Pon la mesa, llena la alacena."],
+["figma","BF_HanRiverMorning3499","Han River Morning, $34.99.","FE","서울(구매 상위 테마) + 블프가","Mañana en el río Han, $34.99."],
+["figma","BF_OnePacketHotWater","One Packet, 5–6 oz of Hot Water.","FE","간편함(패킷 1개+물) + 한 잔 $1.17","Un sobre, 5–6 oz de agua caliente."],
+["figma","BF_FiresideZero","Fireside Cup, Zero Caffeine.","RB","겨울 저녁 한 잔(카페인 0)","Junto a la chimenea, cero cafeína."],
+["figma","BF_BananaSoonSaleNow","Banana Creamer Soon. SANS on Sale Now.","BC","바나나 크리머 티저 + SANS 먼저(가격·날짜 없음)","Banana Creamer, muy pronto. SANS, en oferta ya."],
+["figma","BF_StockedBeforeRush","Stocked Before the Rush.","FE+RB","12/1 정가 복귀 전 쟁여 두기","Alacena llena antes de las fiestas."],
+["canva","BF_OnYourListNow30","Already on Your List? It's 30% Off.","FE","미뤄 둔 구매(ICSC 72%)","Estaba en tu lista. Hoy, 30% menos."],
+["canva","BF_SamePouchLowerPrice","Same Pouch. Lower Price.","FE","가격 소구 $49.99→$34.99","Misma bolsa. Menor precio."],
+["canva","BF_LateCupEarlyPrice","Late-Night Cup, Early-Bird Price.","RB","저녁 한 잔(카페인 0) + 블프가","Taza de noche, precio de madrugador."],
+["canva","BF_CoffeeBreakPriceBreak","Coffee Break, Price Break.","FE","오후 커피 타임 + 할인","Pausa para el café, pausa en el precio."],
+["canva","BF_FromSeoulToYourCart","From Seoul to Your Cart.","FE","한국 홍삼 유산 + 장바구니","De Seúl a tu carrito."],
+["canva","BF_MakeRoomBanana","Make Room for Banana Creamer.","BC","바나나 크리머 티저 + SANS 먼저","Haz espacio para Banana Creamer."],
+["canva","BF_PriceCheckedCartReady","Price Checked. Cart Ready.","FE+RB","가격 비교 쇼핑(MRI-Simmons 85%)","Precio revisado. Carrito listo."],
+["canva","BF_GiftYourselfFirst","Gift Yourself First.","FE","연말 셀프 기프팅","Regálate tú primero."],
+["canva","BF_PieThenZero","Pie, Then Zero Caffeine.","RB","추수감사절 디저트 후 한 잔(카페인 0)","Primero el pay, luego cero cafeína."],
+["canva","BF_DealYouWaitedFor","The Deal You Waited For.","FE+RB","미뤄 둔 구매(ICSC 72%)","La oferta que esperabas."],
+["local","BF_SeoulNightMarket","Seoul Night Market, Sale Price.","FE","서울 야경(구매 상위 테마) + 블프가","Mercado nocturno, precio de oferta."],
+["local","BF_HanokHolidayEdition","Hanok Holiday Edition.","FE","한옥(구매 상위 테마)","Edición festiva hanok."],
+["local","BF_ThanksgivingListChecked","The Thanksgiving List, Checked Twice.","FE+RB","추수감사절 장보기 목록","La lista de Thanksgiving, revisada dos veces."],
+["local","BF_EveningEditionZero","Zero Caffeine, After Dark.","RB","저녁 한 잔(카페인 0) 신문풍","Cero cafeína, al caer la noche."],
+["local","BF_PriceDropPosted","Price Drop, Posted.","FE","가격 소구 $49.99→$34.99","Bajó el precio, ya es oficial."],
+["local","BF_BananaNextStop","Next Stop: Banana Creamer.","BC","바나나 크리머 티저 + SANS 먼저","Próxima parada: Banana Creamer."],
+["local","BF_WeekendSpecialHerbal","Herbal Coffee, 30% Off.","FE","주말 특가(블프 앞 주말)","Café herbal, 30% menos."],
+["local","BF_RedGinsengPlainSimple","Red Ginseng, Plain and Simple.","FE","한국 홍삼(구매 상위 테마)","Ginseng rojo, simple y claro."],
+["local","BF_MovieNightZero","Movie Night, Zero Caffeine.","RB","연휴 영화의 밤 + 카페인 0","Noche de películas, cero cafeína."],
+["local","BF_MorningPouchEveningPouch","Morning Pouch, Evening Pouch.","FE+RB","아침·저녁 두 제품","Bolsa de mañana, bolsa de noche."],
+["higgsfield","BF_MomsGinsengCup","Mom's Ginseng, Now in a Cup.","FE","한국 홍삼 유산(가족)","El ginseng de mamá, ahora en una taza."],
+["higgsfield","BF_HeAskedForSeconds","He Asked for Seconds.","FE","그의 커피를 바꿔라(구매 상위 테마)","Pidió otra taza."],
+["higgsfield","BF_OurEveningCupZero","Our Evening Cup, Zero Caffeine.","RB","저녁 한 잔(카페인 0)","Nuestra taza de la noche, cero cafeína."],
+["higgsfield","BF_CafecitoBFPrice","Cafecito, Black Friday Price.","FE","히스패닉 카페시토 + 블프가","Cafecito a precio de Black Friday."],
+["higgsfield","BF_InTheCartBeforeBreakfast","In the Cart Before Breakfast.","FE","모바일 쇼핑 + 한 잔 $1.17","En el carrito antes del desayuno."],
+["higgsfield","BF_BananaComingSANSHere","Banana Creamer Is Coming. SANS Is Here.","BC","바나나 크리머 티저 + SANS 먼저","Banana Creamer ya viene. SANS ya está aquí."],
+["higgsfield","BF_HostModeOn","Host Mode: On.","FE+RB","프렌즈기빙·손님맞이 준비","Modo anfitrión: activado."],
+["higgsfield","BF_FrostyWindshieldWarmCup","Frosty Windshield, Warm Cup.","FE","추운 아침 + 100 mg","Parabrisas helado, taza calientita."],
+["higgsfield","BF_GrandpasNightCupZero","Grandpa's Night Cup, Zero Caffeine.","RB","저녁 한 잔(카페인 0)","La taza nocturna del abuelo, cero cafeína."],
+["higgsfield","BF_SeoulMarketMorning3499","Seoul Market Morning, $34.99.","FE","서울(구매 상위 테마) + 블프가","Mañana en un mercado de Seúl, $34.99."]];
 let dt="all",dl="en";const dg=document.getElementById("dgrid"),dtg=document.getElementById("dtog");
 function ddraw(){dtg.innerHTML=[["all","전체 "+D.length],...Object.keys(T).filter(k=>D.some(d=>d[0]===k)).map(k=>[k,T[k].split(" · ")[0]+" "+D.filter(d=>d[0]===k).length])].map(b=>`<button data-k="${b[0]}" aria-pressed="${dt===b[0]}">${b[1]}</button>`).join("");
 dtg.querySelectorAll("button").forEach(b=>b.onclick=()=>{dt=b.dataset.k;ddraw()});
 const sx=dl==="es"?"-es":"";document.getElementById("den").setAttribute("aria-pressed",dl==="en");document.getElementById("des").setAttribute("aria-pressed",dl==="es");
-dg.innerHTML=D.filter(d=>dt==="all"||d[0]===dt).map(d=>{const h=dl==="es"?d[5]:d[2];return `<article class="cr"><a href="img/daily/2026-11-20/${d[0]}-${d[1]}${sx}.jpg" target="_blank" rel="noopener"><img src="img/daily/2026-11-20/${d[0]}-${d[1]}${sx}.jpg" onerror="this.onerror=null;this.src=this.src.replace('-es.jpg','.jpg')" alt="${h} 소재" loading="lazy"></a><h3>${h} <span class="tag${d[3]==="FE"?"":" w"}">${d[3]}</span></h3><dl><div><dt>툴 · 방향</dt><dd>${T[d[0]]}</dd></div><div><dt>소구점 · 근거</dt><dd>${d[4]}</dd></div></dl></article>`}).join("")}
+dg.innerHTML=D.filter(d=>dt==="all"||d[0]===dt).map(d=>{const h=dl==="es"?d[5]:d[2];return `<article class="cr"><a href="img/daily/2026-11-21/${d[0]}-${d[1]}${sx}.jpg" target="_blank" rel="noopener"><img src="img/daily/2026-11-21/${d[0]}-${d[1]}${sx}.jpg" onerror="this.onerror=null;this.src=this.src.replace('-es.jpg','.jpg')" alt="${h} 소재" loading="lazy"></a><h3>${h} <span class="tag${d[3]==="FE"?"":" w"}">${d[3]}</span></h3><dl><div><dt>툴 · 방향</dt><dd>${T[d[0]]}</dd></div><div><dt>소구점 · 근거</dt><dd>${d[4]}</dd></div></dl></article>`}).join("")}
 document.getElementById("den").onclick=()=>{dl="en";ddraw()};document.getElementById("des").onclick=()=>{dl="es";ddraw()};
 ddraw();
 // 아이디어 보드: 구글 시트(Apps Script 웹 앱)에 저장하고 읽어 온다. 주소가 비어 있으면 안내만 보인다.
