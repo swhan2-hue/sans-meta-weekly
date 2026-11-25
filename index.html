@@ -357,7 +357,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
 </section>
 
 <section id="daily">
-  <h2>매일 소재 · 2026-11-24 (10장 · 블프 위너 변형)</h2>
+  <h2>매일 소재 · 2026-11-25 (10장 · 블프 위너 변형)</h2>
   <p class="lead">블프 기간(~11/29) · 최근 7일 위너 이미지에 블프 표시를 얹은 변형 10장(EN 5 · ES 5) · 4:5 · 블프 캠페인에 라이브 · 이미지를 누르면 크게 봅니다</p>
   <div class="tog"><button id="den" aria-pressed="true">English</button><button id="des" aria-pressed="false">Español</button></div>
   <div class="tog" id="dtog" style="flex-wrap:wrap"></div>
@@ -422,21 +422,21 @@ document.getElementById("en").onclick=()=>{lang="en";draw()};document.getElement
 // 매일 소재: [툴, 파일, 이미지 문구, 제품, 소구점·근거]
 const T={figma:"피그마 · 실사 정물 + 세리프",canva:"캔바 · 타이포 포스터",local:"PC 프로그램 · 레트로 인쇄물",higgsfield:"힉스필드 · 인물 라이프스타일",compare:"비교 세트 · 머쉬룸커피 대비(맛 먼저)",bfw:"블프 위너 변형 · 기존 위너 + 블프 표시"};
 const D=[
-["bfw","D2_CornerRibbon_EN","Be Honest. Which One Do You Want?","FE","위너 D_2(7일 전환 246건·단가 4,536원) + 모서리 리본(30% Off · Prime · Nov 30)","Sé honesta. ¿Cuál quieres?"],
-["bfw","RedTheKoreanWay_Ticket_EN","In Korea, Ginseng Turns Red Before It Reaches Your Cup.","FE","위너 V53-A2 RedTheKoreanWay(39건·4,723원) + 쿠폰 티켓($49.99→$34.99)","En Corea, el ginseng se vuelve rojo antes de llegar a tu taza."],
-["bfw","GinsengMacro_HangTag_EN","Korean Red Ginseng.","FE","위너 V59-F2 GinsengMacro(66건·6,427원) + 가격 행택","Ginseng rojo coreano."],
-["bfw","NameTag_TopBar_EN","Close Enough.","FE","위너 V78-W2 NameTag(33건·6,647원) + 상단 빨간 띠","Casi igualito."],
-["bfw","HerbalCoffeeRB_Stamp_EN","Herbal Coffee","RB","위너 RecVisA_4(RB, 120건·5,010원) + 스탬프 30% Off","Café herbal"],
-["bfw","Telenovela_Ticket_ES","You Switched My Coffee?","FE","위너 V19-T Telenovela_ES(55건·4,206원) + 쿠폰 티켓, 옛 패킷 자리에 현재 파우치","—¿Me cambiaste el café?"],
-["bfw","Telenovela_Stamp_ES","You Switched My Coffee?","FE","같은 위너 + 스탬프 30% de descuento","—¿Me cambiaste el café?"],
-["bfw","Esp2_HangTag_ES","A Stronger Coffee. A Hotter Night.","FE","위너 esp_2(74건·3,443원) + 가격 행택","Un café más fuerte. Una noche más ardiente."],
-["bfw","Esp3_Ticket_ES","He Switched His Coffee. I Noticed.","FE","위너 esp_3(52건·3,425원) + 쿠폰 티켓","Él cambió de café. Y me di cuenta."],
-["bfw","LionsMane_TopBar_ES","Lion's Mane.","FE","위너 V60-N2 LionsMane_ES(40건) + 상단 빨간 띠","Melena de león."]];
+["bfw","D2_SideTab_EN","Be Honest. Which One Do You Want?","FE","위너 D_2(7일 전환 353건·단가 5,213원) + 왼쪽 세로 탭(30% Off · Prime · Nov 30)","Sé honesta. ¿Cuál quieres?"],
+["bfw","D2_Receipt_EN","Be Honest. Which One Do You Want?","FE","같은 위너 + 영수증($49.99 − $15.00 = $34.99)","Sé honesta. ¿Cuál quieres?"],
+["bfw","GinsengMacro_Seal_EN","Korean Red Ginseng.","FE","위너 GinsengMacro(BFT 포함 7일 114건·약 6,000원) + 원형 실(30% Off)","Ginseng rojo coreano."],
+["bfw","GinsengMacro_Bubble_EN","Korean Red Ginseng.","FE","같은 위너 + 말풍선 가격($34.99)","Ginseng rojo coreano."],
+["bfw","HerbalCoffeeRB_Tape_EN","Herbal Coffee","RB","위너 RecVisA_4(RB, 86건·4,920원) + 마스킹 테이프 30% Off","Café herbal"],
+["bfw","Esp2_Seal_ES","A Stronger Coffee. A Hotter Night.","FE","위너 esp_2(BFT 포함 7일 673건·약 4,050원) + 원형 실","Un café más fuerte. Una noche más ardiente."],
+["bfw","Esp2_BottomStrip_ES","A Stronger Coffee. A Hotter Night.","FE","같은 위너 + 하단 검은 띠(30% de descuento)","Un café más fuerte. Una noche más ardiente."],
+["bfw","Esp3_Receipt_ES","He Switched His Coffee. I Noticed.","FE","위너 esp_3(87건·4,003원) + 영수증","Él cambió de café. Y me di cuenta."],
+["bfw","Esp3_SideTab_ES","He Switched His Coffee. I Noticed.","FE","같은 위너 + 왼쪽 세로 탭","Él cambió de café. Y me di cuenta."],
+["bfw","LionsMane_Bubble_ES","Lion's Mane.","FE","위너 V60-N2 LionsMane_ES + 말풍선 가격","Melena de león."]];
 let dt="all",dl="en";const dg=document.getElementById("dgrid"),dtg=document.getElementById("dtog");
 function ddraw(){dtg.innerHTML=[["all","전체 "+D.length],...Object.keys(T).filter(k=>D.some(d=>d[0]===k)).map(k=>[k,T[k].split(" · ")[0]+" "+D.filter(d=>d[0]===k).length])].map(b=>`<button data-k="${b[0]}" aria-pressed="${dt===b[0]}">${b[1]}</button>`).join("");
 dtg.querySelectorAll("button").forEach(b=>b.onclick=()=>{dt=b.dataset.k;ddraw()});
 const sx=dl==="es"?"-es":"";document.getElementById("den").setAttribute("aria-pressed",dl==="en");document.getElementById("des").setAttribute("aria-pressed",dl==="es");
-dg.innerHTML=D.filter(d=>dt==="all"||d[0]===dt).map(d=>{const h=dl==="es"?d[5]:d[2];return `<article class="cr"><a href="img/daily/2026-11-24/${d[0]}-${d[1]}${sx}.jpg" target="_blank" rel="noopener"><img src="img/daily/2026-11-24/${d[0]}-${d[1]}${sx}.jpg" onerror="this.onerror=null;this.src=this.src.replace('-es.jpg','.jpg')" alt="${h} 소재" loading="lazy"></a><h3>${h} <span class="tag${d[3]==="FE"?"":" w"}">${d[3]}</span></h3><dl><div><dt>툴 · 방향</dt><dd>${T[d[0]]}</dd></div><div><dt>소구점 · 근거</dt><dd>${d[4]}</dd></div></dl></article>`}).join("")}
+dg.innerHTML=D.filter(d=>dt==="all"||d[0]===dt).map(d=>{const h=dl==="es"?d[5]:d[2];return `<article class="cr"><a href="img/daily/2026-11-25/${d[0]}-${d[1]}${sx}.jpg" target="_blank" rel="noopener"><img src="img/daily/2026-11-25/${d[0]}-${d[1]}${sx}.jpg" onerror="this.onerror=null;this.src=this.src.replace('-es.jpg','.jpg')" alt="${h} 소재" loading="lazy"></a><h3>${h} <span class="tag${d[3]==="FE"?"":" w"}">${d[3]}</span></h3><dl><div><dt>툴 · 방향</dt><dd>${T[d[0]]}</dd></div><div><dt>소구점 · 근거</dt><dd>${d[4]}</dd></div></dl></article>`}).join("")}
 document.getElementById("den").onclick=()=>{dl="en";ddraw()};document.getElementById("des").onclick=()=>{dl="es";ddraw()};
 ddraw();
 // 아이디어 보드: 구글 시트(Apps Script 웹 앱)에 저장하고 읽어 온다. 주소가 비어 있으면 안내만 보인다.
