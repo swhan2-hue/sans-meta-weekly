@@ -357,7 +357,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;color:v
 </section>
 
 <section id="daily">
-  <h2>매일 소재 · 2026-11-26 (10장 · 블프 위너 변형)</h2>
+  <h2>매일 소재 · 2026-11-27 (10장 · 블프 위너 변형)</h2>
   <p class="lead">블프 기간(~11/29) · 최근 7일 위너 이미지에 블프 표시를 얹은 변형 10장(EN 5 · ES 5) · 4:5 · 블프 캠페인에 라이브 · 이미지를 누르면 크게 봅니다</p>
   <div class="tog"><button id="den" aria-pressed="true">English</button><button id="des" aria-pressed="false">Español</button></div>
   <div class="tog" id="dtog" style="flex-wrap:wrap"></div>
@@ -422,21 +422,21 @@ document.getElementById("en").onclick=()=>{lang="en";draw()};document.getElement
 // 매일 소재: [툴, 파일, 이미지 문구, 제품, 소구점·근거]
 const T={figma:"피그마 · 실사 정물 + 세리프",canva:"캔바 · 타이포 포스터",local:"PC 프로그램 · 레트로 인쇄물",higgsfield:"힉스필드 · 인물 라이프스타일",compare:"비교 세트 · 머쉬룸커피 대비(맛 먼저)",bfw:"블프 위너 변형 · 기존 위너 + 블프 표시"};
 const D=[
-["bfw","GinsengMacro_Pennant_EN","Korean Red Ginseng.","FE","위너 GinsengMacro(BFT·원본 합쳐 7일 161건·약 6,400원) + 위에서 내려온 깃발(30% Off · Prime · Nov 30)","Ginseng rojo coreano."],
-["bfw","GinsengMacro_ShelfTag_EN","Korean Red Ginseng.","FE","같은 위너 + 매대 가격표($34.99 · 한 잔 약 $1.17)","Ginseng rojo coreano."],
-["bfw","RedTheKoreanWay_StickyNote_EN","In Korea, Ginseng Turns Red Before It Reaches Your Cup.","FE","위너 V53-A2 RedTheKoreanWay(7일 36건·5,173원) + 포스트잇(30% Off · $34.99)","En Corea, el ginseng se vuelve rojo antes de llegar a tu taza."],
-["bfw","RedTheKoreanWay_SplitChip_EN","In Korea, Ginseng Turns Red Before It Reaches Your Cup.","FE","같은 위너 + 검정·빨강 가격 칩($34.99)","En Corea, el ginseng se vuelve rojo antes de llegar a tu taza."],
-["bfw","HerbalCoffeeRB_Calendar_EN","Herbal Coffee","RB","위너 RecVisA_4(RB, 7일 61건·5,697원) + 달력(Nov 30 · Last Day)","Café herbal"],
-["bfw","Esp2_Calendar_ES","A Stronger Coffee. A Hotter Night.","FE","위너 esp_2(BFT 포함 7일 830건·약 4,390원) + 달력(30 de nov. · Último día)","Un café más fuerte. Una noche más ardiente."],
-["bfw","Esp2_SplitChip_ES","A Stronger Coffee. A Hotter Night.","FE","같은 위너 + 검정·빨강 가격 칩($34.99)","Un café más fuerte. Una noche más ardiente."],
-["bfw","Esp3_StickyNote_ES","He Switched His Coffee. I Noticed.","FE","위너 esp_3(7일 150건·4,442원) + 포스트잇(30% menos)","Él cambió de café. Y me di cuenta."],
-["bfw","Esp3_ShelfTag_ES","He Switched His Coffee. I Noticed.","FE","같은 위너 + 매대 가격표($34.99)","Él cambió de café. Y me di cuenta."],
-["bfw","Telenovela_Pennant_ES","Did You Switch My Coffee?","FE","위너 V19-T Telenovela_ES(7일 57건·5,291원) + 위에서 내려온 깃발(30% menos)","¿Me cambiaste el café?"]];
+["bfw","GinsengMacro_Starburst_EN","Korean Red Ginseng.","FE","위너 GinsengMacro(BFT·원본 합쳐 7일 128건·약 5,900원) + 노란 별 모양 버스트(30% Off · $34.99)","Ginseng rojo coreano."],
+["bfw","GinsengMacro_Notification_EN","Korean Red Ginseng.","FE","같은 위너 + 휴대폰 알림 카드(Black Friday: 30% Off)","Ginseng rojo coreano."],
+["bfw","RedTheKoreanWay_TapeBand_EN","In Korea, Ginseng Turns Red Before It Reaches Your Cup.","FE","위너 V53-A2 RedTheKoreanWay(7일 36건·5,020원) + 검정·노랑 테이프 띠(30% Off · $34.99)","En Corea, el ginseng se vuelve rojo antes de llegar a tu taza."],
+["bfw","RedTheKoreanWay_PriceArrow_EN","In Korea, Ginseng Turns Red Before It Reaches Your Cup.","FE","같은 위너 + 가격 화살표($49.99 → $34.99)","En Corea, el ginseng se vuelve rojo antes de llegar a tu taza."],
+["bfw","HerbalCoffeeRB_Rosette_EN","Herbal Coffee","RB","위너 RecVisA_4(RB, 7일 53건·6,172원) + 로제트 리본(30% Off)","Café herbal"],
+["bfw","Esp2_Rosette_ES","A Stronger Coffee. A Hotter Night.","FE","위너 esp_2(BFT 포함 7일 902건·약 4,800원) + 로제트 리본(30% menos)","Un café más fuerte. Una noche más ardiente."],
+["bfw","Esp2_PriceArrow_ES","A Stronger Coffee. A Hotter Night.","FE","같은 위너 + 가격 화살표($49.99 → $34.99)","Un café más fuerte. Una noche más ardiente."],
+["bfw","Esp3_Starburst_ES","He Switched His Coffee. I Noticed.","FE","위너 esp_3(7일 227건·4,731원) + 노란 별 모양 버스트(30% menos)","Él cambió de café. Y me di cuenta."],
+["bfw","Esp3_Notification_ES","He Switched His Coffee. I Noticed.","FE","같은 위너 + 휴대폰 알림 카드(30% menos)","Él cambió de café. Y me di cuenta."],
+["bfw","Telenovela_TapeBand_ES","Did You Switch My Coffee?","FE","위너 V19-T Telenovela_ES(7일 58건·5,920원) + 검정·노랑 테이프 띠(30% menos)","¿Me cambiaste el café?"]];
 let dt="all",dl="en";const dg=document.getElementById("dgrid"),dtg=document.getElementById("dtog");
 function ddraw(){dtg.innerHTML=[["all","전체 "+D.length],...Object.keys(T).filter(k=>D.some(d=>d[0]===k)).map(k=>[k,T[k].split(" · ")[0]+" "+D.filter(d=>d[0]===k).length])].map(b=>`<button data-k="${b[0]}" aria-pressed="${dt===b[0]}">${b[1]}</button>`).join("");
 dtg.querySelectorAll("button").forEach(b=>b.onclick=()=>{dt=b.dataset.k;ddraw()});
 const sx=dl==="es"?"-es":"";document.getElementById("den").setAttribute("aria-pressed",dl==="en");document.getElementById("des").setAttribute("aria-pressed",dl==="es");
-dg.innerHTML=D.filter(d=>dt==="all"||d[0]===dt).map(d=>{const h=dl==="es"?d[5]:d[2];return `<article class="cr"><a href="img/daily/2026-11-26/${d[0]}-${d[1]}${sx}.jpg" target="_blank" rel="noopener"><img src="img/daily/2026-11-26/${d[0]}-${d[1]}${sx}.jpg" onerror="this.onerror=null;this.src=this.src.replace('-es.jpg','.jpg')" alt="${h} 소재" loading="lazy"></a><h3>${h} <span class="tag${d[3]==="FE"?"":" w"}">${d[3]}</span></h3><dl><div><dt>툴 · 방향</dt><dd>${T[d[0]]}</dd></div><div><dt>소구점 · 근거</dt><dd>${d[4]}</dd></div></dl></article>`}).join("")}
+dg.innerHTML=D.filter(d=>dt==="all"||d[0]===dt).map(d=>{const h=dl==="es"?d[5]:d[2];return `<article class="cr"><a href="img/daily/2026-11-27/${d[0]}-${d[1]}${sx}.jpg" target="_blank" rel="noopener"><img src="img/daily/2026-11-27/${d[0]}-${d[1]}${sx}.jpg" onerror="this.onerror=null;this.src=this.src.replace('-es.jpg','.jpg')" alt="${h} 소재" loading="lazy"></a><h3>${h} <span class="tag${d[3]==="FE"?"":" w"}">${d[3]}</span></h3><dl><div><dt>툴 · 방향</dt><dd>${T[d[0]]}</dd></div><div><dt>소구점 · 근거</dt><dd>${d[4]}</dd></div></dl></article>`}).join("")}
 document.getElementById("den").onclick=()=>{dl="en";ddraw()};document.getElementById("des").onclick=()=>{dl="es";ddraw()};
 ddraw();
 // 아이디어 보드: 구글 시트(Apps Script 웹 앱)에 저장하고 읽어 온다. 주소가 비어 있으면 안내만 보인다.
